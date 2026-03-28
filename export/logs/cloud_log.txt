@@ -1,0 +1,278 @@
+
+
+[2026-02-23 22:20:28] Client version: 1769026246
+[2026-02-23 22:20:28] [AppID 7] Starting sync (init,)
+[2026-02-23 22:20:28] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-02-23 22:20:28] [AppID 7] Not running AutoCloud. No config data found
+[2026-02-23 22:20:28] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-02-23 22:20:29] [AppID 7] YldWriteCacheDirectoryToFile - empty vector, deleting 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 22:21:06] [AppID 7] Starting sync (down,)
+[2026-02-23 22:21:06] [AppID 7] Attempting to sync from local change number '0' to global change number '273' (full)
+[2026-02-23 22:21:06] [AppID 7] Need to download file serverbrowser_hist.vdf
+[2026-02-23 22:21:06] [AppID 7] Need to download file sharedconfig.vdf
+[2026-02-23 22:21:07] [AppID 7] HTTP download for file 'sharedconfig.vdf' from host 'steamcloud-us-east3.s3.dualstack.us-east-2.amazonaws.com', path /8C/03/6A/03/7/01E_0_0B288C6C_86575_591.dat, beginning. . .
+[2026-02-23 22:21:07] [AppID 7] HTTP download for file 'serverbrowser_hist.vdf' from host 'steamcloud-us-east1.storage.googleapis.com', path /8C/03/6A/03/7/01E_0_0B288C6C_8661E_916.dat, beginning. . .
+[2026-02-23 22:21:07] [AppID 7] HTTP download for file 'sharedconfig.vdf' from host 'steamcloud-us-east3.s3.dualstack.us-east-2.amazonaws.com' - Success.
+[2026-02-23 22:21:07] [AppID 7] Download OK for file sharedconfig.vdf
+[2026-02-23 22:21:07] [AppID 7] HTTP download for file 'serverbrowser_hist.vdf' from host 'steamcloud-us-east1.storage.googleapis.com' - Success.
+[2026-02-23 22:21:07] [AppID 7] Download OK for file serverbrowser_hist.vdf
+[2026-02-23 22:21:07] [AppID 7] Download complete, result OK
+[2026-02-23 22:21:07] [AppID 7] Successfully synced to ChangeNumber 273
+[2026-02-23 22:21:07] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-02-23 22:21:07] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-02-23 22:22:10] Client version: 1769026246
+[2026-02-23 22:22:10] [AppID 7] Starting sync (init,)
+[2026-02-23 22:22:10] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-02-23 22:22:10] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-02-23 22:22:10] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 22:22:11] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-02-23 22:22:11] [AppID 7] Starting sync (eval,)
+[2026-02-23 22:22:11] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-02-23 22:22:11] [AppID 7] Currently already synced to global change number '273', should be nothing to download
+[2026-02-23 22:22:11] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-02-23 22:22:11] [AppID 7] File is in sync sharedconfig.vdf
+[2026-02-23 22:22:11] [AppID 7] Eval complete
+[2026-02-23 22:22:11] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-02-23 22:22:11] [AppID 7] Starting sync (down,)
+[2026-02-23 22:22:11] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 22:22:11] [AppID 7] Currently already synced to global change number '273', should be nothing to download
+[2026-02-23 22:22:11] [AppID 7] Download complete in build list
+[2026-02-23 22:22:11] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-02-23 22:22:11] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-02-23 22:22:11] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-02-23 22:23:03] Client version: 1769026246
+[2026-02-23 22:23:03] [AppID 7] Starting sync (init,)
+[2026-02-23 22:23:03] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-02-23 22:23:03] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-02-23 22:23:03] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 22:23:04] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-02-23 22:23:04] [AppID 7] Starting sync (eval,)
+[2026-02-23 22:23:04] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-02-23 22:23:04] [AppID 7] Currently already synced to global change number '273', should be nothing to download
+[2026-02-23 22:23:04] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-02-23 22:23:04] [AppID 7] File is in sync sharedconfig.vdf
+[2026-02-23 22:23:04] [AppID 7] Eval complete
+[2026-02-23 22:23:04] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-02-23 22:23:04] [AppID 7] Starting sync (down,)
+[2026-02-23 22:23:04] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 22:23:04] [AppID 7] Currently already synced to global change number '273', should be nothing to download
+[2026-02-23 22:23:04] [AppID 7] Download complete in build list
+[2026-02-23 22:23:04] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-02-23 22:23:04] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-02-23 22:23:04] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 22:24:04] [Roaming Config] PerformSyncCloud - all sync'd up
+
+
+[2026-02-23 23:22:12] Client version: 1769026246
+[2026-02-23 23:22:12] [AppID 7] Starting sync (init,)
+[2026-02-23 23:22:12] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-02-23 23:22:12] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-02-23 23:22:13] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 23:22:14] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-02-23 23:22:14] [AppID 7] Starting sync (eval,)
+[2026-02-23 23:22:14] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-02-23 23:22:14] [AppID 7] Currently already synced to global change number '273', should be nothing to download
+[2026-02-23 23:22:14] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-02-23 23:22:14] [AppID 7] File is in sync sharedconfig.vdf
+[2026-02-23 23:22:14] [AppID 7] Eval complete
+[2026-02-23 23:22:14] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-02-23 23:22:14] [AppID 7] Starting sync (down,)
+[2026-02-23 23:22:14] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-02-23 23:22:14] [AppID 7] Currently already synced to global change number '273', should be nothing to download
+[2026-02-23 23:22:14] [AppID 7] Download complete in build list
+[2026-02-23 23:22:14] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-02-23 23:22:14] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-02-23 23:22:14] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-23 18:31:51] Client version: 1773426366
+[2026-03-23 18:31:51] [AppID 7] Starting sync (init,)
+[2026-03-23 18:31:51] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-23 18:31:51] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-23 18:31:51] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-23 18:31:53] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-23 18:31:53] [AppID 7] Starting sync (eval,)
+[2026-03-23 18:31:53] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-23 18:31:53] [AppID 7] Need to sync from local change number '273' to global change number '293' (full), but not attempting now
+[2026-03-23 18:31:53] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-23 18:31:53] [AppID 7] Need to download file sharedconfig.vdf
+[2026-03-23 18:31:53] [AppID 7] Eval complete
+[2026-03-23 18:31:53] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-23 18:31:53] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-23 18:31:54] [Roaming Config] PerformSyncCloud - syncing cloud files locally
+[2026-03-23 18:31:54] [AppID 7] Starting sync (down,)
+[2026-03-23 18:31:54] [AppID 7] Attempting to sync from local change number '273' to global change number '293' (full)
+[2026-03-23 18:31:54] [AppID 7] Need to download file sharedconfig.vdf
+[2026-03-23 18:31:54] [AppID 7] HTTP download for file 'sharedconfig.vdf' from host 'steamcloud-us-east1.storage.googleapis.com', path /8C/03/6A/03/7/01E_0_0B288C6C_86575_593.dat, beginning. . .
+[2026-03-23 18:31:54] [AppID 7] HTTP download for file 'sharedconfig.vdf' from host 'steamcloud-us-east1.storage.googleapis.com' - Success.
+[2026-03-23 18:31:54] [AppID 7] Download OK for file sharedconfig.vdf
+[2026-03-23 18:31:54] [AppID 7] Download complete, result OK
+[2026-03-23 18:31:54] [AppID 7] Successfully synced to ChangeNumber 293
+[2026-03-23 18:31:54] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-23 18:31:55] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-23 18:31:57] [AppID 7] Starting sync (down,)
+[2026-03-23 18:31:57] [AppID 7] Currently already synced to global change number '293', should be nothing to download
+[2026-03-23 18:31:57] [AppID 7] Download complete in build list
+[2026-03-23 18:31:57] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-03-23 18:31:57] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-23 18:31:57] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-23 18:37:45] Client version: 1773426366
+[2026-03-23 18:37:45] [AppID 7] Starting sync (init,)
+[2026-03-23 18:37:45] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-23 18:37:45] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-23 18:37:45] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-23 18:37:46] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-23 18:37:46] [AppID 7] Starting sync (eval,)
+[2026-03-23 18:37:46] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-23 18:37:46] [AppID 7] Need to sync from local change number '293' to global change number '294' (full), but not attempting now
+[2026-03-23 18:37:46] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-23 18:37:46] [AppID 7] File is in sync sharedconfig.vdf
+[2026-03-23 18:37:46] [AppID 7] Eval complete
+[2026-03-23 18:37:46] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-23 18:37:46] [AppID 7] Starting sync (down,)
+[2026-03-23 18:37:46] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-23 18:37:46] [AppID 7] Attempting to sync from local change number '293' to global change number '294' (full)
+[2026-03-23 18:37:46] [AppID 7] Download complete in build list
+[2026-03-23 18:37:46] [AppID 7] Successfully synced to ChangeNumber 294
+[2026-03-23 18:37:46] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-23 18:37:46] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-23 19:14:28] Client version: 1773426366
+[2026-03-23 19:14:28] [AppID 7] Starting sync (init,)
+[2026-03-23 19:14:28] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-23 19:14:28] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-23 19:14:28] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-23 19:14:29] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-23 19:14:29] [AppID 7] Starting sync (eval,)
+[2026-03-23 19:14:29] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-23 19:14:29] [AppID 7] Currently already synced to global change number '294', should be nothing to download
+[2026-03-23 19:14:29] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-23 19:14:29] [AppID 7] File is in sync sharedconfig.vdf
+[2026-03-23 19:14:29] [AppID 7] Eval complete
+[2026-03-23 19:14:29] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-23 19:14:29] [AppID 7] Starting sync (down,)
+[2026-03-23 19:14:29] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-23 19:14:29] [AppID 7] Currently already synced to global change number '294', should be nothing to download
+[2026-03-23 19:14:29] [AppID 7] Download complete in build list
+[2026-03-23 19:14:29] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-03-23 19:14:29] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-23 19:14:29] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-24 20:08:22] Client version: 1773426366
+[2026-03-24 20:08:22] [AppID 7] Starting sync (init,)
+[2026-03-24 20:08:22] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-24 20:08:22] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-24 20:08:22] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-24 20:08:23] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-24 20:08:23] [AppID 7] Starting sync (eval,)
+[2026-03-24 20:08:23] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-24 20:08:23] [AppID 7] Need to sync from local change number '294' to global change number '295' (full), but not attempting now
+[2026-03-24 20:08:23] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-24 20:08:23] [AppID 7] File is in sync sharedconfig.vdf
+[2026-03-24 20:08:23] [AppID 7] Eval complete
+[2026-03-24 20:08:23] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-24 20:08:23] [AppID 7] Starting sync (down,)
+[2026-03-24 20:08:23] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-24 20:08:23] [AppID 7] Attempting to sync from local change number '294' to global change number '295' (full)
+[2026-03-24 20:08:23] [AppID 7] Download complete in build list
+[2026-03-24 20:08:23] [AppID 7] Successfully synced to ChangeNumber 295
+[2026-03-24 20:08:23] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-24 20:08:23] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-24 23:09:14] Client version: 1773426366
+[2026-03-24 23:09:14] [AppID 7] Starting sync (init,)
+[2026-03-24 23:09:14] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-24 23:09:15] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-24 23:09:15] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-24 23:09:16] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-24 23:09:16] [AppID 7] Starting sync (eval,)
+[2026-03-24 23:09:16] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-24 23:09:16] [AppID 7] Currently already synced to global change number '295', should be nothing to download
+[2026-03-24 23:09:16] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-24 23:09:16] [AppID 7] File is in sync sharedconfig.vdf
+[2026-03-24 23:09:16] [AppID 7] Eval complete
+[2026-03-24 23:09:16] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-24 23:09:16] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-24 23:09:16] [Roaming Config] PerformSyncCloud - all sync'd up
+[2026-03-24 23:09:17] [AppID 7] Starting sync (down,)
+[2026-03-24 23:09:17] [AppID 7] Currently already synced to global change number '295', should be nothing to download
+[2026-03-24 23:09:17] [AppID 7] Download complete in build list
+[2026-03-24 23:09:17] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-03-24 23:09:17] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-24 23:09:17] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-24 23:14:05] Client version: 1773426366
+[2026-03-24 23:14:05] [AppID 7] Starting sync (init,)
+[2026-03-24 23:14:05] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-24 23:14:05] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-24 23:14:05] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-24 23:14:07] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-24 23:14:07] [AppID 7] Starting sync (eval,)
+[2026-03-24 23:14:07] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-24 23:14:07] [AppID 7] Currently already synced to global change number '295', should be nothing to download
+[2026-03-24 23:14:07] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-24 23:14:07] [AppID 7] File is in sync sharedconfig.vdf
+[2026-03-24 23:14:07] [AppID 7] Eval complete
+[2026-03-24 23:14:07] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-24 23:14:07] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-24 23:14:07] [Roaming Config] PerformSyncCloud - all sync'd up
+[2026-03-24 23:14:09] [AppID 7] Starting sync (down,)
+[2026-03-24 23:14:09] [AppID 7] Currently already synced to global change number '295', should be nothing to download
+[2026-03-24 23:14:09] [AppID 7] Download complete in build list
+[2026-03-24 23:14:09] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-03-24 23:14:09] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-24 23:14:09] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-26 19:17:27] Client version: 1773426366
+[2026-03-26 19:17:27] [AppID 7] Starting sync (init,)
+[2026-03-26 19:17:27] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-26 19:17:27] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-26 19:17:27] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-26 19:17:29] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-26 19:17:29] [AppID 7] Starting sync (eval,)
+[2026-03-26 19:17:29] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-26 19:17:29] [AppID 7] Need to sync from local change number '295' to global change number '296' (full), but not attempting now
+[2026-03-26 19:17:29] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-26 19:17:29] [AppID 7] File is in sync sharedconfig.vdf
+[2026-03-26 19:17:29] [AppID 7] Eval complete
+[2026-03-26 19:17:29] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-26 19:17:29] [AppID 7] Starting sync (down,)
+[2026-03-26 19:17:29] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-26 19:17:29] [AppID 7] Attempting to sync from local change number '295' to global change number '296' (full)
+[2026-03-26 19:17:29] [AppID 7] Download complete in build list
+[2026-03-26 19:17:29] [AppID 7] Successfully synced to ChangeNumber 296
+[2026-03-26 19:17:29] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-26 19:17:29] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+
+
+[2026-03-26 19:17:58] Client version: 1773426366
+[2026-03-26 19:17:58] [AppID 7] Starting sync (init,)
+[2026-03-26 19:17:58] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-26 19:17:58] [U:1:57279372] [AppID 7] Init cache request complete
+[2026-03-26 19:17:58] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-26 19:17:59] [Roaming Config] PerformSyncCloud - evaluating sync state
+[2026-03-26 19:17:59] [AppID 7] Starting sync (eval,)
+[2026-03-26 19:17:59] [AppID 7] AutoCloud checking local state for user 57279372
+[2026-03-26 19:17:59] [AppID 7] Currently already synced to global change number '296', should be nothing to download
+[2026-03-26 19:17:59] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2026-03-26 19:17:59] [AppID 7] File is in sync sharedconfig.vdf
+[2026-03-26 19:17:59] [AppID 7] Eval complete
+[2026-03-26 19:17:59] [Roaming Config] OnRemoteStorageStateEvaluated - result OK
+[2026-03-26 19:17:59] [AppID 7] Starting sync (down,)
+[2026-03-26 19:17:59] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'
+[2026-03-26 19:17:59] [AppID 7] Currently already synced to global change number '296', should be nothing to download
+[2026-03-26 19:17:59] [AppID 7] Download complete in build list
+[2026-03-26 19:17:59] [AppID 7] Successfully synced to ChangeNumber 0
+[2026-03-26 19:17:59] [Roaming Config] OnRemoteStorageSyncedClient() - result OK
+[2026-03-26 19:17:59] [AppID 7] YldWriteCacheDirectoryToFile - saved to 'D:\aigame\idlegame\export/userdata/57279372/7/remotecache.vdf'

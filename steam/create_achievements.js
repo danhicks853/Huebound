@@ -1,0 +1,325 @@
+// Huebound Achievement Bulk Creator
+// Paste this into the browser console on the Steamworks achievements page:
+// https://partner.steamworks.com/apps/achievements/4459040
+//
+// This uses the same AJAX calls that the Steamworks UI makes internally.
+
+const APP_ID = 4459040;
+const achievements = [
+  {api: 'all_colors', name: 'Huebound', desc: 'Discover all 256 colors.', hidden: false},
+  {api: 'ten_nodes', name: 'Factory Floor', desc: 'Place 10 nodes.', hidden: false},
+  {api: 'rich', name: 'Enlightened', desc: 'Accumulate 10,000 Light.', hidden: false},
+  {api: 'color_blue', name: 'Blue', desc: 'Discover Blue.', hidden: false},
+  {api: 'color_red', name: 'Red', desc: 'Discover Red.', hidden: false},
+  {api: 'color_yellow', name: 'Yellow', desc: 'Discover Yellow.', hidden: false},
+  {api: 'color_purple', name: 'Purple', desc: 'Discover Purple.', hidden: false},
+  {api: 'color_orange', name: 'Orange', desc: 'Discover Orange.', hidden: false},
+  {api: 'color_green', name: 'Green', desc: 'Discover Green.', hidden: false},
+  {api: 'color_violet', name: 'Violet', desc: 'Discover Violet.', hidden: false},
+  {api: 'color_rose', name: 'Rose', desc: 'Discover Rose.', hidden: false},
+  {api: 'color_chartreuse', name: 'Chartreuse', desc: 'Discover Chartreuse.', hidden: false},
+  {api: 'color_magenta', name: 'Magenta', desc: 'Discover Magenta.', hidden: false},
+  {api: 'color_indigo', name: 'Indigo', desc: 'Discover Indigo.', hidden: false},
+  {api: 'color_vermillion', name: 'Vermillion', desc: 'Discover Vermillion.', hidden: false},
+  {api: 'color_scarlet', name: 'Scarlet', desc: 'Discover Scarlet.', hidden: false},
+  {api: 'color_crimson', name: 'Crimson', desc: 'Discover Crimson.', hidden: false},
+  {api: 'color_coral', name: 'Coral', desc: 'Discover Coral.', hidden: false},
+  {api: 'color_salmon', name: 'Salmon', desc: 'Discover Salmon.', hidden: false},
+  {api: 'color_amber', name: 'Amber', desc: 'Discover Amber.', hidden: false},
+  {api: 'color_gold', name: 'Gold', desc: 'Discover Gold.', hidden: false},
+  {api: 'color_lime', name: 'Lime', desc: 'Discover Lime.', hidden: false},
+  {api: 'color_teal', name: 'Teal', desc: 'Discover Teal.', hidden: false},
+  {api: 'color_cyan', name: 'Cyan', desc: 'Discover Cyan.', hidden: false},
+  {api: 'color_sky', name: 'Sky', desc: 'Discover Sky.', hidden: false},
+  {api: 'color_azure', name: 'Azure', desc: 'Discover Azure.', hidden: false},
+  {api: 'color_cerulean', name: 'Cerulean', desc: 'Discover Cerulean.', hidden: false},
+  {api: 'color_lavender', name: 'Lavender', desc: 'Discover Lavender.', hidden: false},
+  {api: 'color_plum', name: 'Plum', desc: 'Discover Plum.', hidden: false},
+  {api: 'color_fuchsia', name: 'Fuchsia', desc: 'Discover Fuchsia.', hidden: false},
+  {api: 'color_hot_pink', name: 'Hot Pink', desc: 'Discover Hot Pink.', hidden: false},
+  {api: 'color_peach', name: 'Peach', desc: 'Discover Peach.', hidden: false},
+  {api: 'color_apricot', name: 'Apricot', desc: 'Discover Apricot.', hidden: false},
+  {api: 'color_mint', name: 'Mint', desc: 'Discover Mint.', hidden: false},
+  {api: 'color_spring', name: 'Spring', desc: 'Discover Spring.', hidden: false},
+  {api: 'color_emerald', name: 'Emerald', desc: 'Discover Emerald.', hidden: false},
+  {api: 'color_mauve', name: 'Mauve', desc: 'Discover Mauve.', hidden: false},
+  {api: 'color_periwinkle', name: 'Periwinkle', desc: 'Discover Periwinkle.', hidden: false},
+  {api: 'color_iris', name: 'Iris', desc: 'Discover Iris.', hidden: false},
+  {api: 'color_amethyst', name: 'Amethyst', desc: 'Discover Amethyst.', hidden: false},
+  {api: 'color_orchid', name: 'Orchid', desc: 'Discover Orchid.', hidden: false},
+  {api: 'color_thistle', name: 'Thistle', desc: 'Discover Thistle.', hidden: false},
+  {api: 'color_lilac', name: 'Lilac', desc: 'Discover Lilac.', hidden: false},
+  {api: 'color_wine', name: 'Wine', desc: 'Discover Wine.', hidden: false},
+  {api: 'color_burgundy', name: 'Burgundy', desc: 'Discover Burgundy.', hidden: false},
+  {api: 'color_maroon', name: 'Maroon', desc: 'Discover Maroon.', hidden: false},
+  {api: 'color_rust', name: 'Rust', desc: 'Discover Rust.', hidden: false},
+  {api: 'color_sienna', name: 'Sienna', desc: 'Discover Sienna.', hidden: false},
+  {api: 'color_copper', name: 'Copper', desc: 'Discover Copper.', hidden: false},
+  {api: 'color_bronze', name: 'Bronze', desc: 'Discover Bronze.', hidden: false},
+  {api: 'color_brass', name: 'Brass', desc: 'Discover Brass.', hidden: false},
+  {api: 'color_olive', name: 'Olive', desc: 'Discover Olive.', hidden: false},
+  {api: 'color_moss', name: 'Moss', desc: 'Discover Moss.', hidden: false},
+  {api: 'color_forest', name: 'Forest', desc: 'Discover Forest.', hidden: false},
+  {api: 'color_jade', name: 'Jade', desc: 'Discover Jade.', hidden: false},
+  {api: 'color_sage', name: 'Sage', desc: 'Discover Sage.', hidden: false},
+  {api: 'color_sea_green', name: 'Sea Green', desc: 'Discover Sea Green.', hidden: false},
+  {api: 'color_turquoise', name: 'Turquoise', desc: 'Discover Turquoise.', hidden: false},
+  {api: 'color_aquamarine', name: 'Aquamarine', desc: 'Discover Aquamarine.', hidden: false},
+  {api: 'color_steel', name: 'Steel', desc: 'Discover Steel.', hidden: false},
+  {api: 'color_slate', name: 'Slate', desc: 'Discover Slate.', hidden: false},
+  {api: 'color_denim', name: 'Denim', desc: 'Discover Denim.', hidden: false},
+  {api: 'color_navy', name: 'Navy', desc: 'Discover Navy.', hidden: false},
+  {api: 'color_midnight', name: 'Midnight', desc: 'Discover Midnight.', hidden: false},
+  {api: 'color_cobalt', name: 'Cobalt', desc: 'Discover Cobalt.', hidden: false},
+  {api: 'color_sapphire', name: 'Sapphire', desc: 'Discover Sapphire.', hidden: false},
+  {api: 'color_raspberry', name: 'Raspberry', desc: 'Discover Raspberry.', hidden: false},
+  {api: 'color_ruby', name: 'Ruby', desc: 'Discover Ruby.', hidden: false},
+  {api: 'color_garnet', name: 'Garnet', desc: 'Discover Garnet.', hidden: false},
+  {api: 'color_brick', name: 'Brick', desc: 'Discover Brick.', hidden: false},
+  {api: 'color_terracotta', name: 'Terracotta', desc: 'Discover Terracotta.', hidden: false},
+  {api: 'color_clay', name: 'Clay', desc: 'Discover Clay.', hidden: false},
+  {api: 'color_blush', name: 'Blush', desc: 'Discover Blush.', hidden: false},
+  {api: 'color_flamingo', name: 'Flamingo', desc: 'Discover Flamingo.', hidden: false},
+  {api: 'color_bubblegum', name: 'Bubblegum', desc: 'Discover Bubblegum.', hidden: false},
+  {api: 'color_tangerine', name: 'Tangerine', desc: 'Discover Tangerine.', hidden: false},
+  {api: 'color_pumpkin', name: 'Pumpkin', desc: 'Discover Pumpkin.', hidden: false},
+  {api: 'color_honey', name: 'Honey', desc: 'Discover Honey.', hidden: false},
+  {api: 'color_lemon', name: 'Lemon', desc: 'Discover Lemon.', hidden: false},
+  {api: 'color_canary', name: 'Canary', desc: 'Discover Canary.', hidden: false},
+  {api: 'color_pistachio', name: 'Pistachio', desc: 'Discover Pistachio.', hidden: false},
+  {api: 'color_seafoam', name: 'Seafoam', desc: 'Discover Seafoam.', hidden: false},
+  {api: 'color_powder', name: 'Powder', desc: 'Discover Powder.', hidden: false},
+  {api: 'color_ice', name: 'Ice', desc: 'Discover Ice.', hidden: false},
+  {api: 'color_ash', name: 'Ash', desc: 'Discover Ash.', hidden: false},
+  {api: 'color_pewter', name: 'Pewter', desc: 'Discover Pewter.', hidden: false},
+  {api: 'color_silver', name: 'Silver', desc: 'Discover Silver.', hidden: false},
+  {api: 'color_platinum', name: 'Platinum', desc: 'Discover Platinum.', hidden: false},
+  {api: 'color_pearl', name: 'Pearl', desc: 'Discover Pearl.', hidden: false},
+  {api: 'color_ivory', name: 'Ivory', desc: 'Discover Ivory.', hidden: false},
+  {api: 'color_cream', name: 'Cream', desc: 'Discover Cream.', hidden: false},
+  {api: 'color_vanilla', name: 'Vanilla', desc: 'Discover Vanilla.', hidden: false},
+  {api: 'color_wheat', name: 'Wheat', desc: 'Discover Wheat.', hidden: false},
+  {api: 'color_sand', name: 'Sand', desc: 'Discover Sand.', hidden: false},
+  {api: 'color_tan', name: 'Tan', desc: 'Discover Tan.', hidden: false},
+  {api: 'color_khaki', name: 'Khaki', desc: 'Discover Khaki.', hidden: false},
+  {api: 'color_camel', name: 'Camel', desc: 'Discover Camel.', hidden: false},
+  {api: 'color_taupe', name: 'Taupe', desc: 'Discover Taupe.', hidden: false},
+  {api: 'color_umber', name: 'Umber', desc: 'Discover Umber.', hidden: false},
+  {api: 'color_sepia', name: 'Sepia', desc: 'Discover Sepia.', hidden: false},
+  {api: 'color_chocolate', name: 'Chocolate', desc: 'Discover Chocolate.', hidden: false},
+  {api: 'color_mocha', name: 'Mocha', desc: 'Discover Mocha.', hidden: false},
+  {api: 'color_coffee', name: 'Coffee', desc: 'Discover Coffee.', hidden: false},
+  {api: 'color_chestnut', name: 'Chestnut', desc: 'Discover Chestnut.', hidden: false},
+  {api: 'color_mahogany', name: 'Mahogany', desc: 'Discover Mahogany.', hidden: false},
+  {api: 'color_auburn', name: 'Auburn', desc: 'Discover Auburn.', hidden: false},
+  {api: 'color_cinnamon', name: 'Cinnamon', desc: 'Discover Cinnamon.', hidden: false},
+  {api: 'color_ginger', name: 'Ginger', desc: 'Discover Ginger.', hidden: false},
+  {api: 'color_caramel', name: 'Caramel', desc: 'Discover Caramel.', hidden: false},
+  {api: 'color_butterscotch', name: 'Butterscotch', desc: 'Discover Butterscotch.', hidden: false},
+  {api: 'color_marigold', name: 'Marigold', desc: 'Discover Marigold.', hidden: false},
+  {api: 'color_saffron', name: 'Saffron', desc: 'Discover Saffron.', hidden: false},
+  {api: 'color_mustard', name: 'Mustard', desc: 'Discover Mustard.', hidden: false},
+  {api: 'color_flax', name: 'Flax', desc: 'Discover Flax.', hidden: false},
+  {api: 'color_champagne', name: 'Champagne', desc: 'Discover Champagne.', hidden: false},
+  {api: 'color_bone', name: 'Bone', desc: 'Discover Bone.', hidden: false},
+  {api: 'color_linen', name: 'Linen', desc: 'Discover Linen.', hidden: false},
+  {api: 'color_parchment', name: 'Parchment', desc: 'Discover Parchment.', hidden: false},
+  {api: 'color_eggshell', name: 'Eggshell', desc: 'Discover Eggshell.', hidden: false},
+  {api: 'color_snow', name: 'Snow', desc: 'Discover Snow.', hidden: false},
+  {api: 'color_ghost', name: 'Ghost', desc: 'Discover Ghost.', hidden: false},
+  {api: 'color_fog', name: 'Fog', desc: 'Discover Fog.', hidden: false},
+  {api: 'color_mist', name: 'Mist', desc: 'Discover Mist.', hidden: false},
+  {api: 'color_storm', name: 'Storm', desc: 'Discover Storm.', hidden: false},
+  {api: 'color_thunder', name: 'Thunder', desc: 'Discover Thunder.', hidden: false},
+  {api: 'color_shadow', name: 'Shadow', desc: 'Discover Shadow.', hidden: false},
+  {api: 'color_charcoal', name: 'Charcoal', desc: 'Discover Charcoal.', hidden: false},
+  {api: 'color_graphite', name: 'Graphite', desc: 'Discover Graphite.', hidden: false},
+  {api: 'color_onyx', name: 'Onyx', desc: 'Discover Onyx.', hidden: false},
+  {api: 'color_obsidian', name: 'Obsidian', desc: 'Discover Obsidian.', hidden: false},
+  {api: 'color_ink', name: 'Ink', desc: 'Discover Ink.', hidden: false},
+  {api: 'color_void', name: 'Void', desc: 'Discover Void.', hidden: false},
+  {api: 'color_raven', name: 'Raven', desc: 'Discover Raven.', hidden: false},
+  {api: 'color_eclipse', name: 'Eclipse', desc: 'Discover Eclipse.', hidden: false},
+  {api: 'color_dusk', name: 'Dusk', desc: 'Discover Dusk.', hidden: false},
+  {api: 'color_twilight', name: 'Twilight', desc: 'Discover Twilight.', hidden: false},
+  {api: 'color_dawn', name: 'Dawn', desc: 'Discover Dawn.', hidden: false},
+  {api: 'color_sunrise', name: 'Sunrise', desc: 'Discover Sunrise.', hidden: false},
+  {api: 'color_sunset', name: 'Sunset', desc: 'Discover Sunset.', hidden: false},
+  {api: 'color_ember', name: 'Ember', desc: 'Discover Ember.', hidden: false},
+  {api: 'color_flame', name: 'Flame', desc: 'Discover Flame.', hidden: false},
+  {api: 'color_lava', name: 'Lava', desc: 'Discover Lava.', hidden: false},
+  {api: 'color_blood', name: 'Blood', desc: 'Discover Blood.', hidden: false},
+  {api: 'color_cherry', name: 'Cherry', desc: 'Discover Cherry.', hidden: false},
+  {api: 'color_strawberry', name: 'Strawberry', desc: 'Discover Strawberry.', hidden: false},
+  {api: 'color_watermelon', name: 'Watermelon', desc: 'Discover Watermelon.', hidden: false},
+  {api: 'color_cotton_candy', name: 'Cotton Candy', desc: 'Discover Cotton Candy.', hidden: false},
+  {api: 'color_rose_quartz', name: 'Rose Quartz', desc: 'Discover Rose Quartz.', hidden: false},
+  {api: 'color_wisteria', name: 'Wisteria', desc: 'Discover Wisteria.', hidden: false},
+  {api: 'color_heather', name: 'Heather', desc: 'Discover Heather.', hidden: false},
+  {api: 'color_grape', name: 'Grape', desc: 'Discover Grape.', hidden: false},
+  {api: 'color_eggplant', name: 'Eggplant', desc: 'Discover Eggplant.', hidden: false},
+  {api: 'color_mulberry', name: 'Mulberry', desc: 'Discover Mulberry.', hidden: false},
+  {api: 'color_boysenberry', name: 'Boysenberry', desc: 'Discover Boysenberry.', hidden: false},
+  {api: 'color_claret', name: 'Claret', desc: 'Discover Claret.', hidden: false},
+  {api: 'color_oxblood', name: 'Oxblood', desc: 'Discover Oxblood.', hidden: false},
+  {api: 'color_pine', name: 'Pine', desc: 'Discover Pine.', hidden: false},
+  {api: 'color_fern', name: 'Fern', desc: 'Discover Fern.', hidden: false},
+  {api: 'color_clover', name: 'Clover', desc: 'Discover Clover.', hidden: false},
+  {api: 'color_basil', name: 'Basil', desc: 'Discover Basil.', hidden: false},
+  {api: 'color_avocado', name: 'Avocado', desc: 'Discover Avocado.', hidden: false},
+  {api: 'color_pear', name: 'Pear', desc: 'Discover Pear.', hidden: false},
+  {api: 'color_celery', name: 'Celery', desc: 'Discover Celery.', hidden: false},
+  {api: 'color_eucalyptus', name: 'Eucalyptus', desc: 'Discover Eucalyptus.', hidden: false},
+  {api: 'color_ocean', name: 'Ocean', desc: 'Discover Ocean.', hidden: false},
+  {api: 'color_marine', name: 'Marine', desc: 'Discover Marine.', hidden: false},
+  {api: 'color_lagoon', name: 'Lagoon', desc: 'Discover Lagoon.', hidden: false},
+  {api: 'color_arctic', name: 'Arctic', desc: 'Discover Arctic.', hidden: false},
+  {api: 'color_glacier', name: 'Glacier', desc: 'Discover Glacier.', hidden: false},
+  {api: 'color_cornflower', name: 'Cornflower', desc: 'Discover Cornflower.', hidden: false},
+  {api: 'color_bluebell', name: 'Bluebell', desc: 'Discover Bluebell.', hidden: false},
+  {api: 'color_hyacinth', name: 'Hyacinth', desc: 'Discover Hyacinth.', hidden: false},
+  {api: 'color_violet_blue', name: 'Violet Blue', desc: 'Discover Violet Blue.', hidden: false},
+  {api: 'color_royal', name: 'Royal', desc: 'Discover Royal.', hidden: false},
+  {api: 'color_imperial', name: 'Imperial', desc: 'Discover Imperial.', hidden: false},
+  {api: 'color_regal', name: 'Regal', desc: 'Discover Regal.', hidden: false},
+  {api: 'color_majesty', name: 'Majesty', desc: 'Discover Majesty.', hidden: false},
+  {api: 'color_crown', name: 'Crown', desc: 'Discover Crown.', hidden: false},
+  {api: 'color_topaz', name: 'Topaz', desc: 'Discover Topaz.', hidden: false},
+  {api: 'color_citrine', name: 'Citrine', desc: 'Discover Citrine.', hidden: false},
+  {api: 'color_peridot', name: 'Peridot', desc: 'Discover Peridot.', hidden: false},
+  {api: 'color_nebula', name: 'Nebula', desc: 'Discover Nebula.', hidden: true},
+  {api: 'color_cosmos', name: 'Cosmos', desc: 'Discover Cosmos.', hidden: true},
+  {api: 'color_aurora', name: 'Aurora', desc: 'Discover Aurora.', hidden: true},
+  {api: 'color_prism', name: 'Prism', desc: 'Discover Prism.', hidden: true},
+  {api: 'color_opal', name: 'Opal', desc: 'Discover Opal.', hidden: true},
+  {api: 'color_moonstone', name: 'Moonstone', desc: 'Discover Moonstone.', hidden: true},
+  {api: 'color_sunstone', name: 'Sunstone', desc: 'Discover Sunstone.', hidden: true},
+  {api: 'color_starlight', name: 'Starlight', desc: 'Discover Starlight.', hidden: true},
+  {api: 'color_comet', name: 'Comet', desc: 'Discover Comet.', hidden: true},
+  {api: 'color_meteor', name: 'Meteor', desc: 'Discover Meteor.', hidden: true},
+  {api: 'color_supernova', name: 'Supernova', desc: 'Discover Supernova.', hidden: true},
+  {api: 'color_quasar', name: 'Quasar', desc: 'Discover Quasar.', hidden: true},
+  {api: 'color_pulsar', name: 'Pulsar', desc: 'Discover Pulsar.', hidden: true},
+  {api: 'color_neutron', name: 'Neutron', desc: 'Discover Neutron.', hidden: true},
+  {api: 'color_plasma', name: 'Plasma', desc: 'Discover Plasma.', hidden: true},
+  {api: 'color_ether', name: 'Ether', desc: 'Discover Ether.', hidden: true},
+  {api: 'color_aether', name: 'Aether', desc: 'Discover Aether.', hidden: true},
+  {api: 'color_mirage', name: 'Mirage', desc: 'Discover Mirage.', hidden: true},
+  {api: 'color_phantom', name: 'Phantom', desc: 'Discover Phantom.', hidden: true},
+  {api: 'color_specter', name: 'Specter', desc: 'Discover Specter.', hidden: true},
+  {api: 'color_wraith', name: 'Wraith', desc: 'Discover Wraith.', hidden: true},
+  {api: 'color_shade', name: 'Shade', desc: 'Discover Shade.', hidden: true},
+  {api: 'color_gloom', name: 'Gloom', desc: 'Discover Gloom.', hidden: true},
+  {api: 'color_abyss', name: 'Abyss', desc: 'Discover Abyss.', hidden: true},
+  {api: 'color_zenith', name: 'Zenith', desc: 'Discover Zenith.', hidden: true},
+  {api: 'color_apex', name: 'Apex', desc: 'Discover Apex.', hidden: true},
+  {api: 'color_pinnacle', name: 'Pinnacle', desc: 'Discover Pinnacle.', hidden: true},
+  {api: 'color_summit', name: 'Summit', desc: 'Discover Summit.', hidden: true},
+  {api: 'color_horizon', name: 'Horizon', desc: 'Discover Horizon.', hidden: true},
+  {api: 'color_solstice', name: 'Solstice', desc: 'Discover Solstice.', hidden: true},
+  {api: 'color_equinox', name: 'Equinox', desc: 'Discover Equinox.', hidden: true},
+  {api: 'color_tempest', name: 'Tempest', desc: 'Discover Tempest.', hidden: true},
+  {api: 'color_zephyr', name: 'Zephyr', desc: 'Discover Zephyr.', hidden: true},
+  {api: 'color_nimbus', name: 'Nimbus', desc: 'Discover Nimbus.', hidden: true},
+  {api: 'color_cirrus', name: 'Cirrus', desc: 'Discover Cirrus.', hidden: true},
+  {api: 'color_stratus', name: 'Stratus', desc: 'Discover Stratus.', hidden: true},
+  {api: 'color_cumulus', name: 'Cumulus', desc: 'Discover Cumulus.', hidden: true},
+  {api: 'color_haze', name: 'Haze', desc: 'Discover Haze.', hidden: true},
+  {api: 'color_smog', name: 'Smog', desc: 'Discover Smog.', hidden: true},
+  {api: 'color_dust', name: 'Dust', desc: 'Discover Dust.', hidden: true},
+  {api: 'color_soot', name: 'Soot', desc: 'Discover Soot.', hidden: true},
+  {api: 'color_cinder', name: 'Cinder', desc: 'Discover Cinder.', hidden: true},
+  {api: 'color_ash_rose', name: 'Ash Rose', desc: 'Discover Ash Rose.', hidden: true},
+  {api: 'color_dusty_rose', name: 'Dusty Rose', desc: 'Discover Dusty Rose.', hidden: true},
+  {api: 'color_antique', name: 'Antique', desc: 'Discover Antique.', hidden: true},
+  {api: 'color_patina', name: 'Patina', desc: 'Discover Patina.', hidden: true},
+  {api: 'color_verdigris', name: 'Verdigris', desc: 'Discover Verdigris.', hidden: true},
+  {api: 'color_oxidized', name: 'Oxidized', desc: 'Discover Oxidized.', hidden: true},
+  {api: 'color_tarnish', name: 'Tarnish', desc: 'Discover Tarnish.', hidden: true},
+  {api: 'color_lichen', name: 'Lichen', desc: 'Discover Lichen.', hidden: true},
+  {api: 'color_moss_agate', name: 'Moss Agate', desc: 'Discover Moss Agate.', hidden: true},
+  {api: 'color_malachite', name: 'Malachite', desc: 'Discover Malachite.', hidden: true},
+  {api: 'color_lapis', name: 'Lapis', desc: 'Discover Lapis.', hidden: true},
+  {api: 'color_tanzanite', name: 'Tanzanite', desc: 'Discover Tanzanite.', hidden: true},
+  {api: 'color_alexandrite', name: 'Alexandrite', desc: 'Discover Alexandrite.', hidden: true},
+  {api: 'color_tourmaline', name: 'Tourmaline', desc: 'Discover Tourmaline.', hidden: true},
+  {api: 'color_garnet_rose', name: 'Garnet Rose', desc: 'Discover Garnet Rose.', hidden: true},
+  {api: 'color_carnelian', name: 'Carnelian', desc: 'Discover Carnelian.', hidden: true},
+  {api: 'color_jasper', name: 'Jasper', desc: 'Discover Jasper.', hidden: true},
+  {api: 'color_agate', name: 'Agate', desc: 'Discover Agate.', hidden: true},
+  {api: 'color_amber_glow', name: 'Amber Glow', desc: 'Discover Amber Glow.', hidden: true},
+  {api: 'color_tiger_eye', name: 'Tiger Eye', desc: 'Discover Tiger Eye.', hidden: true},
+  {api: 'color_sandstone', name: 'Sandstone', desc: 'Discover Sandstone.', hidden: true},
+  {api: 'color_terracotta_sun', name: 'Terracotta Sun', desc: 'Discover Terracotta Sun.', hidden: true},
+  {api: 'color_adobe', name: 'Adobe', desc: 'Discover Adobe.', hidden: true},
+  {api: 'color_paprika', name: 'Paprika', desc: 'Discover Paprika.', hidden: true},
+  {api: 'color_cayenne', name: 'Cayenne', desc: 'Discover Cayenne.', hidden: true},
+  {api: 'color_tabasco', name: 'Tabasco', desc: 'Discover Tabasco.', hidden: true},
+  {api: 'color_habanero', name: 'Habanero', desc: 'Discover Habanero.', hidden: true},
+  {api: 'color_mango', name: 'Mango', desc: 'Discover Mango.', hidden: true},
+  {api: 'color_papaya', name: 'Papaya', desc: 'Discover Papaya.', hidden: true},
+  {api: 'color_guava', name: 'Guava', desc: 'Discover Guava.', hidden: true},
+  {api: 'color_dragonfruit', name: 'Dragonfruit', desc: 'Discover Dragonfruit.', hidden: true},
+  {api: 'color_acai', name: 'Acai', desc: 'Discover Acai.', hidden: true},
+  {api: 'color_elderberry', name: 'Elderberry', desc: 'Discover Elderberry.', hidden: true},
+  {api: 'color_blackberry', name: 'Blackberry', desc: 'Discover Blackberry.', hidden: true},
+  {api: 'color_plum_wine', name: 'Plum Wine', desc: 'Discover Plum Wine.', hidden: true},
+  {api: 'color_fig', name: 'Fig', desc: 'Discover Fig.', hidden: true},
+  {api: 'color_raisin', name: 'Raisin', desc: 'Discover Raisin.', hidden: true},
+];
+
+
+async function createAchievements() {
+    const sessionid = document.cookie.match(/sessionid=([^;]+)/)?.[1];
+    if (!sessionid) {
+        console.error('No session ID found. Make sure you are logged into Steamworks.');
+        return;
+    }
+
+    let success = 0;
+    let failed = 0;
+
+    for (let i = 0; i < achievements.length; i++) {
+        const a = achievements[i];
+        const formData = new FormData();
+        formData.append('sessionid', sessionid);
+        formData.append('appid', APP_ID);
+        formData.append('achievement_api_name', a.api);
+        formData.append('achievement_display_name', a.name);
+        formData.append('achievement_description', a.desc);
+        formData.append('achievement_hidden', a.hidden ? '1' : '0');
+
+        try {
+            const resp = await fetch(
+                `https://partner.steamworks.com/apps/newachievement/${APP_ID}`,
+                { method: 'POST', body: formData, credentials: 'include' }
+            );
+
+            if (resp.ok) {
+                success++;
+                if ((i + 1) % 25 === 0) {
+                    console.log(`[${i + 1}/${achievements.length}] created...`);
+                }
+            } else {
+                failed++;
+                if (failed <= 5) {
+                    const text = await resp.text();
+                    console.warn(`FAILED: ${a.api} - HTTP ${resp.status}: ${text.substring(0, 200)}`);
+                }
+            }
+        } catch (e) {
+            failed++;
+            if (failed <= 5) console.warn(`ERROR: ${a.api} -`, e);
+        }
+
+        // Small delay to avoid rate limiting
+        await new Promise(r => setTimeout(r, 200));
+    }
+
+    console.log('Done! Success: ' + success + ', Failed: ' + failed);
+    console.log('Refresh the page to see all achievements.');
+}
+
+console.log(`Ready to create ${achievements.length} achievements for App ${APP_ID}.`);
+console.log('Starting in 3 seconds...');
+setTimeout(createAchievements, 3000);

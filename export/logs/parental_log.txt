@@ -1,0 +1,360 @@
+
+
+[2026-02-23 22:20:29] Client version: 1769026246
+[2026-02-23 22:20:29] Setting parental settings for 57279372, account flags are 140840c5
+[2026-02-23 22:20:29] Settings dump:
+[2026-02-23 22:20:29] 	Account ID: 57279372
+[2026-02-23 22:20:29] 	Enabled: false
+[2026-02-23 22:20:29] 	Base list: 0 (Allow all games)
+[2026-02-23 22:20:29] 	No custom list
+[2026-02-23 22:20:29] 	Enabled features (181e):
+[2026-02-23 22:20:29] 		Store
+[2026-02-23 22:20:29] 		Community
+[2026-02-23 22:20:29] 		Profile
+[2026-02-23 22:20:29] 		Friends
+[2026-02-23 22:20:29] 		Library
+[2026-02-23 22:20:29] 		Test
+[2026-02-23 22:20:29] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-02-23 22:20:29] Validating parental settings
+[2026-02-23 22:20:29] Settings dump:
+[2026-02-23 22:20:29] 	Account ID: 57279372
+[2026-02-23 22:20:29] 	Enabled: false
+[2026-02-23 22:20:29] 	Base list: 0 (Allow all games)
+[2026-02-23 22:20:29] 	No custom list
+[2026-02-23 22:20:29] 	Enabled features (181e):
+[2026-02-23 22:20:29] 		Store
+[2026-02-23 22:20:29] 		Community
+[2026-02-23 22:20:29] 		Profile
+[2026-02-23 22:20:29] 		Friends
+[2026-02-23 22:20:29] 		Library
+[2026-02-23 22:20:29] 		Test
+
+
+[2026-02-23 22:22:11] Client version: 1769026246
+[2026-02-23 22:22:11] Setting parental settings for 57279372, account flags are 140840c5
+[2026-02-23 22:22:11] Settings dump:
+[2026-02-23 22:22:11] 	Account ID: 57279372
+[2026-02-23 22:22:11] 	Enabled: false
+[2026-02-23 22:22:11] 	Base list: 0 (Allow all games)
+[2026-02-23 22:22:11] 	No custom list
+[2026-02-23 22:22:11] 	Enabled features (181e):
+[2026-02-23 22:22:11] 		Store
+[2026-02-23 22:22:11] 		Community
+[2026-02-23 22:22:11] 		Profile
+[2026-02-23 22:22:11] 		Friends
+[2026-02-23 22:22:11] 		Library
+[2026-02-23 22:22:11] 		Test
+[2026-02-23 22:22:11] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-02-23 22:22:11] Validating parental settings
+[2026-02-23 22:22:11] Settings dump:
+[2026-02-23 22:22:11] 	Account ID: 57279372
+[2026-02-23 22:22:11] 	Enabled: false
+[2026-02-23 22:22:11] 	Base list: 0 (Allow all games)
+[2026-02-23 22:22:11] 	No custom list
+[2026-02-23 22:22:11] 	Enabled features (181e):
+[2026-02-23 22:22:11] 		Store
+[2026-02-23 22:22:11] 		Community
+[2026-02-23 22:22:11] 		Profile
+[2026-02-23 22:22:11] 		Friends
+[2026-02-23 22:22:11] 		Library
+[2026-02-23 22:22:11] 		Test
+
+
+[2026-02-23 22:23:04] Client version: 1769026246
+[2026-02-23 22:23:04] Setting parental settings for 57279372, account flags are 140840c5
+[2026-02-23 22:23:04] Settings dump:
+[2026-02-23 22:23:04] 	Account ID: 57279372
+[2026-02-23 22:23:04] 	Enabled: false
+[2026-02-23 22:23:04] 	Base list: 0 (Allow all games)
+[2026-02-23 22:23:04] 	No custom list
+[2026-02-23 22:23:04] 	Enabled features (181e):
+[2026-02-23 22:23:04] 		Store
+[2026-02-23 22:23:04] 		Community
+[2026-02-23 22:23:04] 		Profile
+[2026-02-23 22:23:04] 		Friends
+[2026-02-23 22:23:04] 		Library
+[2026-02-23 22:23:04] 		Test
+[2026-02-23 22:23:04] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-02-23 22:23:04] Validating parental settings
+[2026-02-23 22:23:04] Settings dump:
+[2026-02-23 22:23:04] 	Account ID: 57279372
+[2026-02-23 22:23:04] 	Enabled: false
+[2026-02-23 22:23:04] 	Base list: 0 (Allow all games)
+[2026-02-23 22:23:04] 	No custom list
+[2026-02-23 22:23:04] 	Enabled features (181e):
+[2026-02-23 22:23:04] 		Store
+[2026-02-23 22:23:04] 		Community
+[2026-02-23 22:23:04] 		Profile
+[2026-02-23 22:23:04] 		Friends
+[2026-02-23 22:23:04] 		Library
+[2026-02-23 22:23:04] 		Test
+
+
+[2026-02-23 23:22:13] Client version: 1769026246
+[2026-02-23 23:22:13] Setting parental settings for 57279372, account flags are 140840c5
+[2026-02-23 23:22:13] Settings dump:
+[2026-02-23 23:22:13] 	Account ID: 57279372
+[2026-02-23 23:22:13] 	Enabled: false
+[2026-02-23 23:22:13] 	Base list: 0 (Allow all games)
+[2026-02-23 23:22:13] 	No custom list
+[2026-02-23 23:22:13] 	Enabled features (181e):
+[2026-02-23 23:22:13] 		Store
+[2026-02-23 23:22:13] 		Community
+[2026-02-23 23:22:13] 		Profile
+[2026-02-23 23:22:13] 		Friends
+[2026-02-23 23:22:13] 		Library
+[2026-02-23 23:22:13] 		Test
+[2026-02-23 23:22:13] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-02-23 23:22:13] Validating parental settings
+[2026-02-23 23:22:13] Settings dump:
+[2026-02-23 23:22:13] 	Account ID: 57279372
+[2026-02-23 23:22:13] 	Enabled: false
+[2026-02-23 23:22:13] 	Base list: 0 (Allow all games)
+[2026-02-23 23:22:13] 	No custom list
+[2026-02-23 23:22:13] 	Enabled features (181e):
+[2026-02-23 23:22:13] 		Store
+[2026-02-23 23:22:13] 		Community
+[2026-02-23 23:22:13] 		Profile
+[2026-02-23 23:22:13] 		Friends
+[2026-02-23 23:22:13] 		Library
+[2026-02-23 23:22:13] 		Test
+
+
+[2026-03-23 18:31:53] Client version: 1773426366
+[2026-03-23 18:31:53] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-23 18:31:53] Settings dump:
+[2026-03-23 18:31:53] 	Account ID: 57279372
+[2026-03-23 18:31:53] 	Enabled: false
+[2026-03-23 18:31:53] 	Base list: 0 (Allow all games)
+[2026-03-23 18:31:53] 	No custom list
+[2026-03-23 18:31:53] 	Enabled features (181e):
+[2026-03-23 18:31:53] 		Store
+[2026-03-23 18:31:53] 		Community
+[2026-03-23 18:31:53] 		Profile
+[2026-03-23 18:31:53] 		Friends
+[2026-03-23 18:31:53] 		Library
+[2026-03-23 18:31:53] 		Test
+[2026-03-23 18:31:53] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-23 18:31:53] Validating parental settings
+[2026-03-23 18:31:53] Settings dump:
+[2026-03-23 18:31:53] 	Account ID: 57279372
+[2026-03-23 18:31:53] 	Enabled: false
+[2026-03-23 18:31:53] 	Base list: 0 (Allow all games)
+[2026-03-23 18:31:53] 	No custom list
+[2026-03-23 18:31:53] 	Enabled features (181e):
+[2026-03-23 18:31:53] 		Store
+[2026-03-23 18:31:53] 		Community
+[2026-03-23 18:31:53] 		Profile
+[2026-03-23 18:31:53] 		Friends
+[2026-03-23 18:31:53] 		Library
+[2026-03-23 18:31:53] 		Test
+
+
+[2026-03-23 18:37:46] Client version: 1773426366
+[2026-03-23 18:37:46] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-23 18:37:46] Settings dump:
+[2026-03-23 18:37:46] 	Account ID: 57279372
+[2026-03-23 18:37:46] 	Enabled: false
+[2026-03-23 18:37:46] 	Base list: 0 (Allow all games)
+[2026-03-23 18:37:46] 	No custom list
+[2026-03-23 18:37:46] 	Enabled features (181e):
+[2026-03-23 18:37:46] 		Store
+[2026-03-23 18:37:46] 		Community
+[2026-03-23 18:37:46] 		Profile
+[2026-03-23 18:37:46] 		Friends
+[2026-03-23 18:37:46] 		Library
+[2026-03-23 18:37:46] 		Test
+[2026-03-23 18:37:46] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-23 18:37:46] Validating parental settings
+[2026-03-23 18:37:46] Settings dump:
+[2026-03-23 18:37:46] 	Account ID: 57279372
+[2026-03-23 18:37:46] 	Enabled: false
+[2026-03-23 18:37:46] 	Base list: 0 (Allow all games)
+[2026-03-23 18:37:46] 	No custom list
+[2026-03-23 18:37:46] 	Enabled features (181e):
+[2026-03-23 18:37:46] 		Store
+[2026-03-23 18:37:46] 		Community
+[2026-03-23 18:37:46] 		Profile
+[2026-03-23 18:37:46] 		Friends
+[2026-03-23 18:37:46] 		Library
+[2026-03-23 18:37:46] 		Test
+
+
+[2026-03-23 19:14:29] Client version: 1773426366
+[2026-03-23 19:14:29] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-23 19:14:29] Settings dump:
+[2026-03-23 19:14:29] 	Account ID: 57279372
+[2026-03-23 19:14:29] 	Enabled: false
+[2026-03-23 19:14:29] 	Base list: 0 (Allow all games)
+[2026-03-23 19:14:29] 	No custom list
+[2026-03-23 19:14:29] 	Enabled features (181e):
+[2026-03-23 19:14:29] 		Store
+[2026-03-23 19:14:29] 		Community
+[2026-03-23 19:14:29] 		Profile
+[2026-03-23 19:14:29] 		Friends
+[2026-03-23 19:14:29] 		Library
+[2026-03-23 19:14:29] 		Test
+[2026-03-23 19:14:29] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-23 19:14:29] Validating parental settings
+[2026-03-23 19:14:29] Settings dump:
+[2026-03-23 19:14:29] 	Account ID: 57279372
+[2026-03-23 19:14:29] 	Enabled: false
+[2026-03-23 19:14:29] 	Base list: 0 (Allow all games)
+[2026-03-23 19:14:29] 	No custom list
+[2026-03-23 19:14:29] 	Enabled features (181e):
+[2026-03-23 19:14:29] 		Store
+[2026-03-23 19:14:29] 		Community
+[2026-03-23 19:14:29] 		Profile
+[2026-03-23 19:14:29] 		Friends
+[2026-03-23 19:14:29] 		Library
+[2026-03-23 19:14:29] 		Test
+
+
+[2026-03-24 20:08:23] Client version: 1773426366
+[2026-03-24 20:08:23] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-24 20:08:23] Settings dump:
+[2026-03-24 20:08:23] 	Account ID: 57279372
+[2026-03-24 20:08:23] 	Enabled: false
+[2026-03-24 20:08:23] 	Base list: 0 (Allow all games)
+[2026-03-24 20:08:23] 	No custom list
+[2026-03-24 20:08:23] 	Enabled features (181e):
+[2026-03-24 20:08:23] 		Store
+[2026-03-24 20:08:23] 		Community
+[2026-03-24 20:08:23] 		Profile
+[2026-03-24 20:08:23] 		Friends
+[2026-03-24 20:08:23] 		Library
+[2026-03-24 20:08:23] 		Test
+[2026-03-24 20:08:23] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-24 20:08:23] Validating parental settings
+[2026-03-24 20:08:23] Settings dump:
+[2026-03-24 20:08:23] 	Account ID: 57279372
+[2026-03-24 20:08:23] 	Enabled: false
+[2026-03-24 20:08:23] 	Base list: 0 (Allow all games)
+[2026-03-24 20:08:23] 	No custom list
+[2026-03-24 20:08:23] 	Enabled features (181e):
+[2026-03-24 20:08:23] 		Store
+[2026-03-24 20:08:23] 		Community
+[2026-03-24 20:08:23] 		Profile
+[2026-03-24 20:08:23] 		Friends
+[2026-03-24 20:08:23] 		Library
+[2026-03-24 20:08:23] 		Test
+
+
+[2026-03-24 23:09:16] Client version: 1773426366
+[2026-03-24 23:09:16] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-24 23:09:16] Settings dump:
+[2026-03-24 23:09:16] 	Account ID: 57279372
+[2026-03-24 23:09:16] 	Enabled: false
+[2026-03-24 23:09:16] 	Base list: 0 (Allow all games)
+[2026-03-24 23:09:16] 	No custom list
+[2026-03-24 23:09:16] 	Enabled features (181e):
+[2026-03-24 23:09:16] 		Store
+[2026-03-24 23:09:16] 		Community
+[2026-03-24 23:09:16] 		Profile
+[2026-03-24 23:09:16] 		Friends
+[2026-03-24 23:09:16] 		Library
+[2026-03-24 23:09:16] 		Test
+[2026-03-24 23:09:16] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-24 23:09:16] Validating parental settings
+[2026-03-24 23:09:16] Settings dump:
+[2026-03-24 23:09:16] 	Account ID: 57279372
+[2026-03-24 23:09:16] 	Enabled: false
+[2026-03-24 23:09:16] 	Base list: 0 (Allow all games)
+[2026-03-24 23:09:16] 	No custom list
+[2026-03-24 23:09:16] 	Enabled features (181e):
+[2026-03-24 23:09:16] 		Store
+[2026-03-24 23:09:16] 		Community
+[2026-03-24 23:09:16] 		Profile
+[2026-03-24 23:09:16] 		Friends
+[2026-03-24 23:09:16] 		Library
+[2026-03-24 23:09:16] 		Test
+
+
+[2026-03-24 23:14:07] Client version: 1773426366
+[2026-03-24 23:14:07] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-24 23:14:07] Settings dump:
+[2026-03-24 23:14:07] 	Account ID: 57279372
+[2026-03-24 23:14:07] 	Enabled: false
+[2026-03-24 23:14:07] 	Base list: 0 (Allow all games)
+[2026-03-24 23:14:07] 	No custom list
+[2026-03-24 23:14:07] 	Enabled features (181e):
+[2026-03-24 23:14:07] 		Store
+[2026-03-24 23:14:07] 		Community
+[2026-03-24 23:14:07] 		Profile
+[2026-03-24 23:14:07] 		Friends
+[2026-03-24 23:14:07] 		Library
+[2026-03-24 23:14:07] 		Test
+[2026-03-24 23:14:07] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-24 23:14:07] Validating parental settings
+[2026-03-24 23:14:07] Settings dump:
+[2026-03-24 23:14:07] 	Account ID: 57279372
+[2026-03-24 23:14:07] 	Enabled: false
+[2026-03-24 23:14:07] 	Base list: 0 (Allow all games)
+[2026-03-24 23:14:07] 	No custom list
+[2026-03-24 23:14:07] 	Enabled features (181e):
+[2026-03-24 23:14:07] 		Store
+[2026-03-24 23:14:07] 		Community
+[2026-03-24 23:14:07] 		Profile
+[2026-03-24 23:14:07] 		Friends
+[2026-03-24 23:14:07] 		Library
+[2026-03-24 23:14:07] 		Test
+
+
+[2026-03-26 19:17:28] Client version: 1773426366
+[2026-03-26 19:17:28] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-26 19:17:28] Settings dump:
+[2026-03-26 19:17:28] 	Account ID: 57279372
+[2026-03-26 19:17:28] 	Enabled: false
+[2026-03-26 19:17:28] 	Base list: 0 (Allow all games)
+[2026-03-26 19:17:28] 	No custom list
+[2026-03-26 19:17:28] 	Enabled features (181e):
+[2026-03-26 19:17:28] 		Store
+[2026-03-26 19:17:28] 		Community
+[2026-03-26 19:17:28] 		Profile
+[2026-03-26 19:17:28] 		Friends
+[2026-03-26 19:17:28] 		Library
+[2026-03-26 19:17:28] 		Test
+[2026-03-26 19:17:28] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-26 19:17:28] Validating parental settings
+[2026-03-26 19:17:28] Settings dump:
+[2026-03-26 19:17:28] 	Account ID: 57279372
+[2026-03-26 19:17:28] 	Enabled: false
+[2026-03-26 19:17:28] 	Base list: 0 (Allow all games)
+[2026-03-26 19:17:28] 	No custom list
+[2026-03-26 19:17:28] 	Enabled features (181e):
+[2026-03-26 19:17:28] 		Store
+[2026-03-26 19:17:28] 		Community
+[2026-03-26 19:17:28] 		Profile
+[2026-03-26 19:17:28] 		Friends
+[2026-03-26 19:17:28] 		Library
+[2026-03-26 19:17:28] 		Test
+
+
+[2026-03-26 19:17:59] Client version: 1773426366
+[2026-03-26 19:17:59] Setting parental settings for 57279372, account flags are 140840c5
+[2026-03-26 19:17:59] Settings dump:
+[2026-03-26 19:17:59] 	Account ID: 57279372
+[2026-03-26 19:17:59] 	Enabled: false
+[2026-03-26 19:17:59] 	Base list: 0 (Allow all games)
+[2026-03-26 19:17:59] 	No custom list
+[2026-03-26 19:17:59] 	Enabled features (181e):
+[2026-03-26 19:17:59] 		Store
+[2026-03-26 19:17:59] 		Community
+[2026-03-26 19:17:59] 		Profile
+[2026-03-26 19:17:59] 		Friends
+[2026-03-26 19:17:59] 		Library
+[2026-03-26 19:17:59] 		Test
+[2026-03-26 19:17:59] Disabling parental settings for 57279372, account flags are 140840c5
+[2026-03-26 19:17:59] Validating parental settings
+[2026-03-26 19:17:59] Settings dump:
+[2026-03-26 19:17:59] 	Account ID: 57279372
+[2026-03-26 19:17:59] 	Enabled: false
+[2026-03-26 19:17:59] 	Base list: 0 (Allow all games)
+[2026-03-26 19:17:59] 	No custom list
+[2026-03-26 19:17:59] 	Enabled features (181e):
+[2026-03-26 19:17:59] 		Store
+[2026-03-26 19:17:59] 		Community
+[2026-03-26 19:17:59] 		Profile
+[2026-03-26 19:17:59] 		Friends
+[2026-03-26 19:17:59] 		Library
+[2026-03-26 19:17:59] 		Test

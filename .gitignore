@@ -1,0 +1,29 @@
+# Godot 4+ specific ignores
+.import/
+export.cfg
+export_presets.cfg
+.mono/
+data_*/
+
+# Godot specific
+.godot/
+*.tmp
+
+# Build files
+build/
+builds/
+*.exe
+*.pck
+
+# IDE
+.vscode/
+.idea/
+*.sln
+*.csproj
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Steam
+steam_appid.txt

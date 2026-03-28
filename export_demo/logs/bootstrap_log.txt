@@ -1,0 +1,138 @@
+
+
+[2026-03-26 19:26:46] Startup - updater built Mar 12 2026 18:49:28
+[2026-03-26 19:26:46] Startup - Steam Client launched with: "D:\aigame\idlegame\export_demo\steamcmd.exe"  <+80 truncated>
+[2026-03-26 19:26:46] Windows 10.0.26200.0, 0, 2, 256, 1, 48 
+[2026-03-26 19:26:46] Using the following download hosts for Public, Realm steamglobal
+[2026-03-26 19:26:46] 1. https://client-update.fastly.steamstatic.com, /, Realm 'steamglobal', weight was 900, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:26:46] 2. https://client-update.akamai.steamstatic.com, /, Realm 'steamglobal', weight was 400, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:26:46] 3. https://client-update.steamstatic.com, /, Realm 'steamglobal', weight was 1, source = 'baked in'
+[2026-03-26 19:26:46] Checking for update on startup
+[2026-03-26 19:26:46] Checking for available update...
+[2026-03-26 19:26:46] Downloading manifest: https://client-update.fastly.steamstatic.com/steam_cmd_win64
+[2026-03-26 19:26:46] Manifest download: send request
+[2026-03-26 19:26:47] Manifest download: waiting for download to finish
+[2026-03-26 19:26:47] Manifest download: finished
+[2026-03-26 19:26:47] Downloaded new manifest: /steam_cmd_win64 version 1773426366, installed version 0, existing pending version 0
+[2026-03-26 19:26:47] Package file steamcmd_public_all.zip.ea97f8fd711e4ae492274da96e83bf31eb804528 missing or incorrect size
+[2026-03-26 19:26:47] Package file steamcmd_bins_win64.zip.vz.021d9669d3cda902b0bf00941d8473c67b653644_14842826 missing or incorrect size
+[2026-03-26 19:26:47] Package file steamcmd_steamservice_win64.zip.vz.b378448b853aff88728497f1807431fa9469365b_2035912 missing or incorrect size
+[2026-03-26 19:26:47] Package file steamcmd_steamerrorreporter_win64.zip.059f0871bcf10825f3fc4ad0ca04244b5a8adaea missing or incorrect size
+[2026-03-26 19:26:47] Package file steamcmd_siteserverui_win64.zip.vz.dc16029fde3ece5e63228a99fe9b4c15940c2fa8_10772685 missing or incorrect size
+[2026-03-26 19:26:47] Package file steamcmd_win64.zip.vz.21e9c951def80da34635aa63451e8cc11d073460_2027425 missing or incorrect size
+[2026-03-26 19:26:47] Add pending download: https://client-update.fastly.steamstatic.com/steamcmd_public_all.zip.ea97f8fd711e4ae492274da96e83bf31eb804528
+[2026-03-26 19:26:47] Manifest download: send request
+[2026-03-26 19:26:47] Add pending download: https://client-update.fastly.steamstatic.com/steamcmd_bins_win64.zip.vz.021d9669d3cda902b0bf00941d8473c67b653644_14842826
+[2026-03-26 19:26:47] Manifest download: send request
+[2026-03-26 19:26:47] Add pending download: https://client-update.fastly.steamstatic.com/steamcmd_steamservice_win64.zip.vz.b378448b853aff88728497f1807431fa9469365b_2035912
+[2026-03-26 19:26:47] Manifest download: send request
+[2026-03-26 19:26:47] Add pending download: https://client-update.fastly.steamstatic.com/steamcmd_steamerrorreporter_win64.zip.059f0871bcf10825f3fc4ad0ca04244b5a8adaea
+[2026-03-26 19:26:47] Manifest download: send request
+[2026-03-26 19:26:47] Add pending download: https://client-update.fastly.steamstatic.com/steamcmd_siteserverui_win64.zip.vz.dc16029fde3ece5e63228a99fe9b4c15940c2fa8_10772685
+[2026-03-26 19:26:47] Manifest download: send request
+[2026-03-26 19:26:47] Add pending download: https://client-update.fastly.steamstatic.com/steamcmd_win64.zip.vz.21e9c951def80da34635aa63451e8cc11d073460_2027425
+[2026-03-26 19:26:47] Manifest download: send request
+[2026-03-26 19:26:47] Downloading update (119 of 29,272 KB)...
+[2026-03-26 19:26:47] Downloading update (3,710 of 29,272 KB)...
+[2026-03-26 19:26:48] Downloading update (13,186 of 29,272 KB)...
+[2026-03-26 19:26:48] Downloading update (23,143 of 29,272 KB)...
+[2026-03-26 19:26:48] Downloading update (27,367 of 29,272 KB)...
+[2026-03-26 19:26:48] Downloading update (29,272 of 29,272 KB)...
+[2026-03-26 19:26:48] Download Complete.
+[2026-03-26 19:26:48] Saving metrics to disk (D:\aigame\idlegame\export_demo\package\steam_cmd_metrics.bin)
+[2026-03-26 19:26:48] uninstalled manifest found in D:\aigame\idlegame\export_demo\package\steam_cmd_win64 (1).
+[2026-03-26 19:26:49] Found pending update
+[2026-03-26 19:26:49] Applying update...
+[2026-03-26 19:26:49] Extracting package...
+[2026-03-26 19:26:49] Installing update...
+[2026-03-26 19:26:50] Committing NTFS transaction (0 non-transactional backup files)
+[2026-03-26 19:26:50] Cleaning up...
+[2026-03-26 19:26:50] Update complete, launching...
+[2026-03-26 19:26:50] Shutdown
+
+
+[2026-03-26 19:26:50] Startup - updater built Mar 12 2026 18:49:28
+[2026-03-26 19:26:50] Startup - Steam Client launched with: D:\aigame\idlegame\export_demo\steamcmd.exe  <+80 truncated>
+[2026-03-26 19:26:50] Windows 10.0.26200.0, 0, 2, 256, 1, 48 
+[2026-03-26 19:26:51] Loading cached metrics from disk (D:\aigame\idlegame\export_demo\package\steam_cmd_metrics.bin)
+[2026-03-26 19:26:51] Using the following download hosts for Public, Realm steamglobal
+[2026-03-26 19:26:51] 1. https://client-update.fastly.steamstatic.com, /, Realm 'steamglobal', weight was 900, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:26:51] 2. https://client-update.akamai.steamstatic.com, /, Realm 'steamglobal', weight was 400, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:26:51] 3. https://client-update.steamstatic.com, /, Realm 'steamglobal', weight was 1, source = 'baked in'
+[2026-03-26 19:26:51] Checking for update on startup
+[2026-03-26 19:26:51] Checking for available updates...
+[2026-03-26 19:26:51] Downloading manifest: https://client-update.fastly.steamstatic.com/steam_cmd_win64
+[2026-03-26 19:26:51] Manifest download: send request
+[2026-03-26 19:26:51] Manifest download: waiting for download to finish
+[2026-03-26 19:26:51] Manifest download: finished
+[2026-03-26 19:26:51] Download skipped: /steam_cmd_win64 version 1773426366, installed version 1773426366, existing pending version 0
+[2026-03-26 19:26:51] Nothing to do
+[2026-03-26 19:26:51] Verifying installation...
+[2026-03-26 19:26:51] Verifying all executable checksums
+[2026-03-26 19:26:54] Verification complete
+[2026-03-26 19:31:12] Shutdown
+
+
+[2026-03-26 19:31:25] Startup - updater built Mar 12 2026 18:49:28
+[2026-03-26 19:31:25] Startup - Steam Client launched with: "D:\aigame\idlegame\export_demo\steamcmd.exe"  <+80 truncated>
+[2026-03-26 19:31:25] Windows 10.0.26200.0, 0, 2, 256, 1, 48 
+[2026-03-26 19:31:25] Loading cached metrics from disk (D:\aigame\idlegame\export_demo\package\steam_cmd_metrics.bin)
+[2026-03-26 19:31:25] Using the following download hosts for Public, Realm steamglobal
+[2026-03-26 19:31:25] 1. https://client-update.akamai.steamstatic.com, /, Realm 'steamglobal', weight was 400, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:31:25] 2. https://client-update.fastly.steamstatic.com, /, Realm 'steamglobal', weight was 900, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:31:25] 3. https://client-update.steamstatic.com, /, Realm 'steamglobal', weight was 1, source = 'baked in'
+[2026-03-26 19:31:25] Checking for update on startup
+[2026-03-26 19:31:25] Checking for available updates...
+[2026-03-26 19:31:25] Downloading manifest: https://client-update.akamai.steamstatic.com/steam_cmd_win64
+[2026-03-26 19:31:25] Manifest download: send request
+[2026-03-26 19:31:25] Manifest download: waiting for download to finish
+[2026-03-26 19:31:25] Manifest download: finished
+[2026-03-26 19:31:25] Download skipped: /steam_cmd_win64 version 1773426366, installed version 1773426366, existing pending version 0
+[2026-03-26 19:31:25] Nothing to do
+[2026-03-26 19:31:25] Verifying installation...
+[2026-03-26 19:31:25] Verifying all executable checksums
+[2026-03-26 19:31:26] Verification complete
+[2026-03-26 19:31:50] Clearing cached metrics (D:\aigame\idlegame\export_demo\package\steam_cmd_metrics.bin)
+[2026-03-26 19:32:04] Shutdown
+
+
+[2026-03-26 19:32:13] Startup - updater built Mar 12 2026 18:49:28
+[2026-03-26 19:32:13] Startup - Steam Client launched with: "D:\aigame\idlegame\export_demo\steamcmd.exe"  <+85 truncated>
+[2026-03-26 19:32:13] Windows 10.0.26200.0, 0, 2, 256, 1, 48 
+[2026-03-26 19:32:13] Using the following download hosts for Public, Realm steamglobal
+[2026-03-26 19:32:13] 1. https://client-update.fastly.steamstatic.com, /, Realm 'steamglobal', weight was 900, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:32:13] 2. https://client-update.akamai.steamstatic.com, /, Realm 'steamglobal', weight was 400, source = 'update_hosts_cached.vdf'
+[2026-03-26 19:32:13] 3. https://client-update.steamstatic.com, /, Realm 'steamglobal', weight was 1, source = 'baked in'
+[2026-03-26 19:32:13] Checking for update on startup
+[2026-03-26 19:32:13] Checking for available updates...
+[2026-03-26 19:32:13] Downloading manifest: https://client-update.fastly.steamstatic.com/steam_cmd_win64
+[2026-03-26 19:32:13] Manifest download: send request
+[2026-03-26 19:32:13] Manifest download: waiting for download to finish
+[2026-03-26 19:32:13] Manifest download: finished
+[2026-03-26 19:32:13] Download skipped: /steam_cmd_win64 version 1773426366, installed version 1773426366, existing pending version 0
+[2026-03-26 19:32:13] Nothing to do
+[2026-03-26 19:32:13] Verifying installation...
+[2026-03-26 19:32:13] Verifying all executable checksums
+[2026-03-26 19:32:13] Verification complete
+[2026-03-26 19:32:18] Shutdown
+
+
+[2026-03-28 02:02:10] Startup - updater built Mar 12 2026 18:49:28
+[2026-03-28 02:02:10] Startup - Steam Client launched with: "D:\aigame\idlegame\export_demo\steamcmd.exe"  <+145 truncated>
+[2026-03-28 02:02:10] Windows 10.0.26200.0, 0, 2, 256, 1, 48 
+[2026-03-28 02:02:10] Using the following download hosts for Public, Realm steamglobal
+[2026-03-28 02:02:10] 1. https://client-update.fastly.steamstatic.com, /, Realm 'steamglobal', weight was 900, source = 'update_hosts_cached.vdf'
+[2026-03-28 02:02:10] 2. https://client-update.akamai.steamstatic.com, /, Realm 'steamglobal', weight was 400, source = 'update_hosts_cached.vdf'
+[2026-03-28 02:02:10] 3. https://client-update.steamstatic.com, /, Realm 'steamglobal', weight was 1, source = 'baked in'
+[2026-03-28 02:02:10] Checking for update on startup
+[2026-03-28 02:02:10] Checking for available updates...
+[2026-03-28 02:02:10] Downloading manifest: https://client-update.fastly.steamstatic.com/steam_cmd_win64
+[2026-03-28 02:02:10] Manifest download: send request
+[2026-03-28 02:02:11] Manifest download: waiting for download to finish
+[2026-03-28 02:02:11] Manifest download: finished
+[2026-03-28 02:02:11] Download skipped: /steam_cmd_win64 version 1773426366, installed version 1773426366, existing pending version 0
+[2026-03-28 02:02:11] Nothing to do
+[2026-03-28 02:02:11] Verifying installation...
+[2026-03-28 02:02:11] Verifying all executable checksums
+[2026-03-28 02:02:11] Verification complete
+[2026-03-28 02:02:28] Shutdown

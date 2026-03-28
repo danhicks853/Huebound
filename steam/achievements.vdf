@@ -1,0 +1,1871 @@
+"achievements"
+{
+	// ─── Milestone Achievements ──────────────────────────────────────────────────
+	"0"
+	{
+		"name" "first_color"
+		"display_name" "First Light"
+		"description" "Discover your first color."
+		"hidden" "0"
+	}
+	"1"
+	{
+		"name" "ten_colors"
+		"display_name" "Budding Palette"
+		"description" "Discover 10 colors."
+		"hidden" "0"
+	}
+	"2"
+	{
+		"name" "fifty_colors"
+		"display_name" "Color Enthusiast"
+		"description" "Discover 50 colors."
+		"hidden" "0"
+	}
+	"3"
+	{
+		"name" "hundred_colors"
+		"display_name" "Chromatist"
+		"description" "Discover 100 colors."
+		"hidden" "0"
+	}
+	"4"
+	{
+		"name" "all_colors"
+		"display_name" "Spectrum Complete"
+		"description" "Discover all 256 colors."
+		"hidden" "0"
+	}
+	"5"
+	{
+		"name" "tier_5"
+		"display_name" "Rare Find"
+		"description" "Discover a Tier 5 color."
+		"hidden" "0"
+	}
+	"6"
+	{
+		"name" "ten_nodes"
+		"display_name" "Factory Floor"
+		"description" "Place 10 nodes on the canvas."
+		"hidden" "0"
+	}
+	"7"
+	{
+		"name" "rich"
+		"display_name" "Luminous"
+		"description" "Earn 10,000 total Light."
+		"hidden" "0"
+	}
+
+	// ─── Tier 0: Primaries (3) ───────────────────────────────────────────────────
+	"8"
+	{
+		"name" "color_blue"
+		"display_name" "Blue"
+		"description" "Discover Blue."
+		"hidden" "0"
+	}
+	"9"
+	{
+		"name" "color_red"
+		"display_name" "Red"
+		"description" "Discover Red."
+		"hidden" "0"
+	}
+	"10"
+	{
+		"name" "color_yellow"
+		"display_name" "Yellow"
+		"description" "Discover Yellow."
+		"hidden" "0"
+	}
+
+	// ─── Tier 1: Secondaries (6) ─────────────────────────────────────────────────
+	"11"
+	{
+		"name" "color_purple"
+		"display_name" "Purple"
+		"description" "Discover Purple."
+		"hidden" "0"
+	}
+	"12"
+	{
+		"name" "color_orange"
+		"display_name" "Orange"
+		"description" "Discover Orange."
+		"hidden" "0"
+	}
+	"13"
+	{
+		"name" "color_green"
+		"display_name" "Green"
+		"description" "Discover Green."
+		"hidden" "0"
+	}
+	"14"
+	{
+		"name" "color_violet"
+		"display_name" "Violet"
+		"description" "Discover Violet."
+		"hidden" "0"
+	}
+	"15"
+	{
+		"name" "color_rose"
+		"display_name" "Rose"
+		"description" "Discover Rose."
+		"hidden" "0"
+	}
+	"16"
+	{
+		"name" "color_chartreuse"
+		"display_name" "Chartreuse"
+		"description" "Discover Chartreuse."
+		"hidden" "0"
+	}
+
+	// ─── Tier 2: Tertiaries (24) ─────────────────────────────────────────────────
+	"17"
+	{
+		"name" "color_magenta"
+		"display_name" "Magenta"
+		"description" "Discover Magenta."
+		"hidden" "0"
+	}
+	"18"
+	{
+		"name" "color_indigo"
+		"display_name" "Indigo"
+		"description" "Discover Indigo."
+		"hidden" "0"
+	}
+	"19"
+	{
+		"name" "color_vermillion"
+		"display_name" "Vermillion"
+		"description" "Discover Vermillion."
+		"hidden" "0"
+	}
+	"20"
+	{
+		"name" "color_scarlet"
+		"display_name" "Scarlet"
+		"description" "Discover Scarlet."
+		"hidden" "0"
+	}
+	"21"
+	{
+		"name" "color_crimson"
+		"display_name" "Crimson"
+		"description" "Discover Crimson."
+		"hidden" "0"
+	}
+	"22"
+	{
+		"name" "color_coral"
+		"display_name" "Coral"
+		"description" "Discover Coral."
+		"hidden" "0"
+	}
+	"23"
+	{
+		"name" "color_salmon"
+		"display_name" "Salmon"
+		"description" "Discover Salmon."
+		"hidden" "0"
+	}
+	"24"
+	{
+		"name" "color_amber"
+		"display_name" "Amber"
+		"description" "Discover Amber."
+		"hidden" "0"
+	}
+	"25"
+	{
+		"name" "color_gold"
+		"display_name" "Gold"
+		"description" "Discover Gold."
+		"hidden" "0"
+	}
+	"26"
+	{
+		"name" "color_lime"
+		"display_name" "Lime"
+		"description" "Discover Lime."
+		"hidden" "0"
+	}
+	"27"
+	{
+		"name" "color_teal"
+		"display_name" "Teal"
+		"description" "Discover Teal."
+		"hidden" "0"
+	}
+	"28"
+	{
+		"name" "color_cyan"
+		"display_name" "Cyan"
+		"description" "Discover Cyan."
+		"hidden" "0"
+	}
+	"29"
+	{
+		"name" "color_sky"
+		"display_name" "Sky"
+		"description" "Discover Sky."
+		"hidden" "0"
+	}
+	"30"
+	{
+		"name" "color_azure"
+		"display_name" "Azure"
+		"description" "Discover Azure."
+		"hidden" "0"
+	}
+	"31"
+	{
+		"name" "color_cerulean"
+		"display_name" "Cerulean"
+		"description" "Discover Cerulean."
+		"hidden" "0"
+	}
+	"32"
+	{
+		"name" "color_lavender"
+		"display_name" "Lavender"
+		"description" "Discover Lavender."
+		"hidden" "0"
+	}
+	"33"
+	{
+		"name" "color_plum"
+		"display_name" "Plum"
+		"description" "Discover Plum."
+		"hidden" "0"
+	}
+	"34"
+	{
+		"name" "color_fuchsia"
+		"display_name" "Fuchsia"
+		"description" "Discover Fuchsia."
+		"hidden" "0"
+	}
+	"35"
+	{
+		"name" "color_hot_pink"
+		"display_name" "Hot Pink"
+		"description" "Discover Hot Pink."
+		"hidden" "0"
+	}
+	"36"
+	{
+		"name" "color_peach"
+		"display_name" "Peach"
+		"description" "Discover Peach."
+		"hidden" "0"
+	}
+	"37"
+	{
+		"name" "color_apricot"
+		"display_name" "Apricot"
+		"description" "Discover Apricot."
+		"hidden" "0"
+	}
+	"38"
+	{
+		"name" "color_mint"
+		"display_name" "Mint"
+		"description" "Discover Mint."
+		"hidden" "0"
+	}
+	"39"
+	{
+		"name" "color_spring"
+		"display_name" "Spring"
+		"description" "Discover Spring."
+		"hidden" "0"
+	}
+	"40"
+	{
+		"name" "color_emerald"
+		"display_name" "Emerald"
+		"description" "Discover Emerald."
+		"hidden" "0"
+	}
+
+	// ─── Tier 3: Quaternaries (48) ───────────────────────────────────────────────
+	"41"
+	{
+		"name" "color_mauve"
+		"display_name" "Mauve"
+		"description" "Discover Mauve."
+		"hidden" "0"
+	}
+	"42"
+	{
+		"name" "color_periwinkle"
+		"display_name" "Periwinkle"
+		"description" "Discover Periwinkle."
+		"hidden" "0"
+	}
+	"43"
+	{
+		"name" "color_iris"
+		"display_name" "Iris"
+		"description" "Discover Iris."
+		"hidden" "0"
+	}
+	"44"
+	{
+		"name" "color_amethyst"
+		"display_name" "Amethyst"
+		"description" "Discover Amethyst."
+		"hidden" "0"
+	}
+	"45"
+	{
+		"name" "color_orchid"
+		"display_name" "Orchid"
+		"description" "Discover Orchid."
+		"hidden" "0"
+	}
+	"46"
+	{
+		"name" "color_thistle"
+		"display_name" "Thistle"
+		"description" "Discover Thistle."
+		"hidden" "0"
+	}
+	"47"
+	{
+		"name" "color_lilac"
+		"display_name" "Lilac"
+		"description" "Discover Lilac."
+		"hidden" "0"
+	}
+	"48"
+	{
+		"name" "color_wine"
+		"display_name" "Wine"
+		"description" "Discover Wine."
+		"hidden" "0"
+	}
+	"49"
+	{
+		"name" "color_burgundy"
+		"display_name" "Burgundy"
+		"description" "Discover Burgundy."
+		"hidden" "0"
+	}
+	"50"
+	{
+		"name" "color_maroon"
+		"display_name" "Maroon"
+		"description" "Discover Maroon."
+		"hidden" "0"
+	}
+	"51"
+	{
+		"name" "color_rust"
+		"display_name" "Rust"
+		"description" "Discover Rust."
+		"hidden" "0"
+	}
+	"52"
+	{
+		"name" "color_sienna"
+		"display_name" "Sienna"
+		"description" "Discover Sienna."
+		"hidden" "0"
+	}
+	"53"
+	{
+		"name" "color_copper"
+		"display_name" "Copper"
+		"description" "Discover Copper."
+		"hidden" "0"
+	}
+	"54"
+	{
+		"name" "color_bronze"
+		"display_name" "Bronze"
+		"description" "Discover Bronze."
+		"hidden" "0"
+	}
+	"55"
+	{
+		"name" "color_brass"
+		"display_name" "Brass"
+		"description" "Discover Brass."
+		"hidden" "0"
+	}
+	"56"
+	{
+		"name" "color_olive"
+		"display_name" "Olive"
+		"description" "Discover Olive."
+		"hidden" "0"
+	}
+	"57"
+	{
+		"name" "color_moss"
+		"display_name" "Moss"
+		"description" "Discover Moss."
+		"hidden" "0"
+	}
+	"58"
+	{
+		"name" "color_forest"
+		"display_name" "Forest"
+		"description" "Discover Forest."
+		"hidden" "0"
+	}
+	"59"
+	{
+		"name" "color_jade"
+		"display_name" "Jade"
+		"description" "Discover Jade."
+		"hidden" "0"
+	}
+	"60"
+	{
+		"name" "color_sage"
+		"display_name" "Sage"
+		"description" "Discover Sage."
+		"hidden" "0"
+	}
+	"61"
+	{
+		"name" "color_sea_green"
+		"display_name" "Sea Green"
+		"description" "Discover Sea Green."
+		"hidden" "0"
+	}
+	"62"
+	{
+		"name" "color_turquoise"
+		"display_name" "Turquoise"
+		"description" "Discover Turquoise."
+		"hidden" "0"
+	}
+	"63"
+	{
+		"name" "color_aquamarine"
+		"display_name" "Aquamarine"
+		"description" "Discover Aquamarine."
+		"hidden" "0"
+	}
+	"64"
+	{
+		"name" "color_steel"
+		"display_name" "Steel"
+		"description" "Discover Steel."
+		"hidden" "0"
+	}
+	"65"
+	{
+		"name" "color_slate"
+		"display_name" "Slate"
+		"description" "Discover Slate."
+		"hidden" "0"
+	}
+	"66"
+	{
+		"name" "color_denim"
+		"display_name" "Denim"
+		"description" "Discover Denim."
+		"hidden" "0"
+	}
+	"67"
+	{
+		"name" "color_navy"
+		"display_name" "Navy"
+		"description" "Discover Navy."
+		"hidden" "0"
+	}
+	"68"
+	{
+		"name" "color_midnight"
+		"display_name" "Midnight"
+		"description" "Discover Midnight."
+		"hidden" "0"
+	}
+	"69"
+	{
+		"name" "color_cobalt"
+		"display_name" "Cobalt"
+		"description" "Discover Cobalt."
+		"hidden" "0"
+	}
+	"70"
+	{
+		"name" "color_sapphire"
+		"display_name" "Sapphire"
+		"description" "Discover Sapphire."
+		"hidden" "0"
+	}
+	"71"
+	{
+		"name" "color_raspberry"
+		"display_name" "Raspberry"
+		"description" "Discover Raspberry."
+		"hidden" "0"
+	}
+	"72"
+	{
+		"name" "color_ruby"
+		"display_name" "Ruby"
+		"description" "Discover Ruby."
+		"hidden" "0"
+	}
+	"73"
+	{
+		"name" "color_garnet"
+		"display_name" "Garnet"
+		"description" "Discover Garnet."
+		"hidden" "0"
+	}
+	"74"
+	{
+		"name" "color_brick"
+		"display_name" "Brick"
+		"description" "Discover Brick."
+		"hidden" "0"
+	}
+	"75"
+	{
+		"name" "color_terracotta"
+		"display_name" "Terracotta"
+		"description" "Discover Terracotta."
+		"hidden" "0"
+	}
+	"76"
+	{
+		"name" "color_clay"
+		"display_name" "Clay"
+		"description" "Discover Clay."
+		"hidden" "0"
+	}
+	"77"
+	{
+		"name" "color_blush"
+		"display_name" "Blush"
+		"description" "Discover Blush."
+		"hidden" "0"
+	}
+	"78"
+	{
+		"name" "color_flamingo"
+		"display_name" "Flamingo"
+		"description" "Discover Flamingo."
+		"hidden" "0"
+	}
+	"79"
+	{
+		"name" "color_bubblegum"
+		"display_name" "Bubblegum"
+		"description" "Discover Bubblegum."
+		"hidden" "0"
+	}
+	"80"
+	{
+		"name" "color_tangerine"
+		"display_name" "Tangerine"
+		"description" "Discover Tangerine."
+		"hidden" "0"
+	}
+	"81"
+	{
+		"name" "color_pumpkin"
+		"display_name" "Pumpkin"
+		"description" "Discover Pumpkin."
+		"hidden" "0"
+	}
+	"82"
+	{
+		"name" "color_honey"
+		"display_name" "Honey"
+		"description" "Discover Honey."
+		"hidden" "0"
+	}
+	"83"
+	{
+		"name" "color_lemon"
+		"display_name" "Lemon"
+		"description" "Discover Lemon."
+		"hidden" "0"
+	}
+	"84"
+	{
+		"name" "color_canary"
+		"display_name" "Canary"
+		"description" "Discover Canary."
+		"hidden" "0"
+	}
+	"85"
+	{
+		"name" "color_pistachio"
+		"display_name" "Pistachio"
+		"description" "Discover Pistachio."
+		"hidden" "0"
+	}
+	"86"
+	{
+		"name" "color_seafoam"
+		"display_name" "Seafoam"
+		"description" "Discover Seafoam."
+		"hidden" "0"
+	}
+	"87"
+	{
+		"name" "color_powder"
+		"display_name" "Powder"
+		"description" "Discover Powder."
+		"hidden" "0"
+	}
+	"88"
+	{
+		"name" "color_ice"
+		"display_name" "Ice"
+		"description" "Discover Ice."
+		"hidden" "0"
+	}
+
+	// ─── Tier 4: Complex (96) ────────────────────────────────────────────────────
+	"89"
+	{
+		"name" "color_ash"
+		"display_name" "Ash"
+		"description" "Discover Ash."
+		"hidden" "1"
+	}
+	"90"
+	{
+		"name" "color_pewter"
+		"display_name" "Pewter"
+		"description" "Discover Pewter."
+		"hidden" "1"
+	}
+	"91"
+	{
+		"name" "color_silver"
+		"display_name" "Silver"
+		"description" "Discover Silver."
+		"hidden" "1"
+	}
+	"92"
+	{
+		"name" "color_platinum"
+		"display_name" "Platinum"
+		"description" "Discover Platinum."
+		"hidden" "1"
+	}
+	"93"
+	{
+		"name" "color_pearl"
+		"display_name" "Pearl"
+		"description" "Discover Pearl."
+		"hidden" "1"
+	}
+	"94"
+	{
+		"name" "color_ivory"
+		"display_name" "Ivory"
+		"description" "Discover Ivory."
+		"hidden" "1"
+	}
+	"95"
+	{
+		"name" "color_cream"
+		"display_name" "Cream"
+		"description" "Discover Cream."
+		"hidden" "1"
+	}
+	"96"
+	{
+		"name" "color_vanilla"
+		"display_name" "Vanilla"
+		"description" "Discover Vanilla."
+		"hidden" "1"
+	}
+	"97"
+	{
+		"name" "color_wheat"
+		"display_name" "Wheat"
+		"description" "Discover Wheat."
+		"hidden" "1"
+	}
+	"98"
+	{
+		"name" "color_sand"
+		"display_name" "Sand"
+		"description" "Discover Sand."
+		"hidden" "1"
+	}
+	"99"
+	{
+		"name" "color_tan"
+		"display_name" "Tan"
+		"description" "Discover Tan."
+		"hidden" "1"
+	}
+	"100"
+	{
+		"name" "color_khaki"
+		"display_name" "Khaki"
+		"description" "Discover Khaki."
+		"hidden" "1"
+	}
+	"101"
+	{
+		"name" "color_camel"
+		"display_name" "Camel"
+		"description" "Discover Camel."
+		"hidden" "1"
+	}
+	"102"
+	{
+		"name" "color_taupe"
+		"display_name" "Taupe"
+		"description" "Discover Taupe."
+		"hidden" "1"
+	}
+	"103"
+	{
+		"name" "color_umber"
+		"display_name" "Umber"
+		"description" "Discover Umber."
+		"hidden" "1"
+	}
+	"104"
+	{
+		"name" "color_sepia"
+		"display_name" "Sepia"
+		"description" "Discover Sepia."
+		"hidden" "1"
+	}
+	"105"
+	{
+		"name" "color_chocolate"
+		"display_name" "Chocolate"
+		"description" "Discover Chocolate."
+		"hidden" "1"
+	}
+	"106"
+	{
+		"name" "color_mocha"
+		"display_name" "Mocha"
+		"description" "Discover Mocha."
+		"hidden" "1"
+	}
+	"107"
+	{
+		"name" "color_coffee"
+		"display_name" "Coffee"
+		"description" "Discover Coffee."
+		"hidden" "1"
+	}
+	"108"
+	{
+		"name" "color_chestnut"
+		"display_name" "Chestnut"
+		"description" "Discover Chestnut."
+		"hidden" "1"
+	}
+	"109"
+	{
+		"name" "color_mahogany"
+		"display_name" "Mahogany"
+		"description" "Discover Mahogany."
+		"hidden" "1"
+	}
+	"110"
+	{
+		"name" "color_auburn"
+		"display_name" "Auburn"
+		"description" "Discover Auburn."
+		"hidden" "1"
+	}
+	"111"
+	{
+		"name" "color_cinnamon"
+		"display_name" "Cinnamon"
+		"description" "Discover Cinnamon."
+		"hidden" "1"
+	}
+	"112"
+	{
+		"name" "color_ginger"
+		"display_name" "Ginger"
+		"description" "Discover Ginger."
+		"hidden" "1"
+	}
+	"113"
+	{
+		"name" "color_caramel"
+		"display_name" "Caramel"
+		"description" "Discover Caramel."
+		"hidden" "1"
+	}
+	"114"
+	{
+		"name" "color_butterscotch"
+		"display_name" "Butterscotch"
+		"description" "Discover Butterscotch."
+		"hidden" "1"
+	}
+	"115"
+	{
+		"name" "color_marigold"
+		"display_name" "Marigold"
+		"description" "Discover Marigold."
+		"hidden" "1"
+	}
+	"116"
+	{
+		"name" "color_saffron"
+		"display_name" "Saffron"
+		"description" "Discover Saffron."
+		"hidden" "1"
+	}
+	"117"
+	{
+		"name" "color_mustard"
+		"display_name" "Mustard"
+		"description" "Discover Mustard."
+		"hidden" "1"
+	}
+	"118"
+	{
+		"name" "color_flax"
+		"display_name" "Flax"
+		"description" "Discover Flax."
+		"hidden" "1"
+	}
+	"119"
+	{
+		"name" "color_champagne"
+		"display_name" "Champagne"
+		"description" "Discover Champagne."
+		"hidden" "1"
+	}
+	"120"
+	{
+		"name" "color_bone"
+		"display_name" "Bone"
+		"description" "Discover Bone."
+		"hidden" "1"
+	}
+	"121"
+	{
+		"name" "color_linen"
+		"display_name" "Linen"
+		"description" "Discover Linen."
+		"hidden" "1"
+	}
+	"122"
+	{
+		"name" "color_parchment"
+		"display_name" "Parchment"
+		"description" "Discover Parchment."
+		"hidden" "1"
+	}
+	"123"
+	{
+		"name" "color_eggshell"
+		"display_name" "Eggshell"
+		"description" "Discover Eggshell."
+		"hidden" "1"
+	}
+	"124"
+	{
+		"name" "color_snow"
+		"display_name" "Snow"
+		"description" "Discover Snow."
+		"hidden" "1"
+	}
+	"125"
+	{
+		"name" "color_ghost"
+		"display_name" "Ghost"
+		"description" "Discover Ghost."
+		"hidden" "1"
+	}
+	"126"
+	{
+		"name" "color_fog"
+		"display_name" "Fog"
+		"description" "Discover Fog."
+		"hidden" "1"
+	}
+	"127"
+	{
+		"name" "color_mist"
+		"display_name" "Mist"
+		"description" "Discover Mist."
+		"hidden" "1"
+	}
+	"128"
+	{
+		"name" "color_storm"
+		"display_name" "Storm"
+		"description" "Discover Storm."
+		"hidden" "1"
+	}
+	"129"
+	{
+		"name" "color_thunder"
+		"display_name" "Thunder"
+		"description" "Discover Thunder."
+		"hidden" "1"
+	}
+	"130"
+	{
+		"name" "color_shadow"
+		"display_name" "Shadow"
+		"description" "Discover Shadow."
+		"hidden" "1"
+	}
+	"131"
+	{
+		"name" "color_charcoal"
+		"display_name" "Charcoal"
+		"description" "Discover Charcoal."
+		"hidden" "1"
+	}
+	"132"
+	{
+		"name" "color_graphite"
+		"display_name" "Graphite"
+		"description" "Discover Graphite."
+		"hidden" "1"
+	}
+	"133"
+	{
+		"name" "color_onyx"
+		"display_name" "Onyx"
+		"description" "Discover Onyx."
+		"hidden" "1"
+	}
+	"134"
+	{
+		"name" "color_obsidian"
+		"display_name" "Obsidian"
+		"description" "Discover Obsidian."
+		"hidden" "1"
+	}
+	"135"
+	{
+		"name" "color_ink"
+		"display_name" "Ink"
+		"description" "Discover Ink."
+		"hidden" "1"
+	}
+	"136"
+	{
+		"name" "color_void"
+		"display_name" "Void"
+		"description" "Discover Void."
+		"hidden" "1"
+	}
+	"137"
+	{
+		"name" "color_raven"
+		"display_name" "Raven"
+		"description" "Discover Raven."
+		"hidden" "1"
+	}
+	"138"
+	{
+		"name" "color_eclipse"
+		"display_name" "Eclipse"
+		"description" "Discover Eclipse."
+		"hidden" "1"
+	}
+	"139"
+	{
+		"name" "color_dusk"
+		"display_name" "Dusk"
+		"description" "Discover Dusk."
+		"hidden" "1"
+	}
+	"140"
+	{
+		"name" "color_twilight"
+		"display_name" "Twilight"
+		"description" "Discover Twilight."
+		"hidden" "1"
+	}
+	"141"
+	{
+		"name" "color_dawn"
+		"display_name" "Dawn"
+		"description" "Discover Dawn."
+		"hidden" "1"
+	}
+	"142"
+	{
+		"name" "color_sunrise"
+		"display_name" "Sunrise"
+		"description" "Discover Sunrise."
+		"hidden" "1"
+	}
+	"143"
+	{
+		"name" "color_sunset"
+		"display_name" "Sunset"
+		"description" "Discover Sunset."
+		"hidden" "1"
+	}
+	"144"
+	{
+		"name" "color_ember"
+		"display_name" "Ember"
+		"description" "Discover Ember."
+		"hidden" "1"
+	}
+	"145"
+	{
+		"name" "color_flame"
+		"display_name" "Flame"
+		"description" "Discover Flame."
+		"hidden" "1"
+	}
+	"146"
+	{
+		"name" "color_lava"
+		"display_name" "Lava"
+		"description" "Discover Lava."
+		"hidden" "1"
+	}
+	"147"
+	{
+		"name" "color_blood"
+		"display_name" "Blood"
+		"description" "Discover Blood."
+		"hidden" "1"
+	}
+	"148"
+	{
+		"name" "color_cherry"
+		"display_name" "Cherry"
+		"description" "Discover Cherry."
+		"hidden" "1"
+	}
+	"149"
+	{
+		"name" "color_strawberry"
+		"display_name" "Strawberry"
+		"description" "Discover Strawberry."
+		"hidden" "1"
+	}
+	"150"
+	{
+		"name" "color_watermelon"
+		"display_name" "Watermelon"
+		"description" "Discover Watermelon."
+		"hidden" "1"
+	}
+	"151"
+	{
+		"name" "color_cotton_candy"
+		"display_name" "Cotton Candy"
+		"description" "Discover Cotton Candy."
+		"hidden" "1"
+	}
+	"152"
+	{
+		"name" "color_rose_quartz"
+		"display_name" "Rose Quartz"
+		"description" "Discover Rose Quartz."
+		"hidden" "1"
+	}
+	"153"
+	{
+		"name" "color_wisteria"
+		"display_name" "Wisteria"
+		"description" "Discover Wisteria."
+		"hidden" "1"
+	}
+	"154"
+	{
+		"name" "color_heather"
+		"display_name" "Heather"
+		"description" "Discover Heather."
+		"hidden" "1"
+	}
+	"155"
+	{
+		"name" "color_grape"
+		"display_name" "Grape"
+		"description" "Discover Grape."
+		"hidden" "1"
+	}
+	"156"
+	{
+		"name" "color_eggplant"
+		"display_name" "Eggplant"
+		"description" "Discover Eggplant."
+		"hidden" "1"
+	}
+	"157"
+	{
+		"name" "color_mulberry"
+		"display_name" "Mulberry"
+		"description" "Discover Mulberry."
+		"hidden" "1"
+	}
+	"158"
+	{
+		"name" "color_boysenberry"
+		"display_name" "Boysenberry"
+		"description" "Discover Boysenberry."
+		"hidden" "1"
+	}
+	"159"
+	{
+		"name" "color_claret"
+		"display_name" "Claret"
+		"description" "Discover Claret."
+		"hidden" "1"
+	}
+	"160"
+	{
+		"name" "color_oxblood"
+		"display_name" "Oxblood"
+		"description" "Discover Oxblood."
+		"hidden" "1"
+	}
+	"161"
+	{
+		"name" "color_pine"
+		"display_name" "Pine"
+		"description" "Discover Pine."
+		"hidden" "1"
+	}
+	"162"
+	{
+		"name" "color_fern"
+		"display_name" "Fern"
+		"description" "Discover Fern."
+		"hidden" "1"
+	}
+	"163"
+	{
+		"name" "color_clover"
+		"display_name" "Clover"
+		"description" "Discover Clover."
+		"hidden" "1"
+	}
+	"164"
+	{
+		"name" "color_basil"
+		"display_name" "Basil"
+		"description" "Discover Basil."
+		"hidden" "1"
+	}
+	"165"
+	{
+		"name" "color_avocado"
+		"display_name" "Avocado"
+		"description" "Discover Avocado."
+		"hidden" "1"
+	}
+	"166"
+	{
+		"name" "color_pear"
+		"display_name" "Pear"
+		"description" "Discover Pear."
+		"hidden" "1"
+	}
+	"167"
+	{
+		"name" "color_celery"
+		"display_name" "Celery"
+		"description" "Discover Celery."
+		"hidden" "1"
+	}
+	"168"
+	{
+		"name" "color_eucalyptus"
+		"display_name" "Eucalyptus"
+		"description" "Discover Eucalyptus."
+		"hidden" "1"
+	}
+	"169"
+	{
+		"name" "color_ocean"
+		"display_name" "Ocean"
+		"description" "Discover Ocean."
+		"hidden" "1"
+	}
+	"170"
+	{
+		"name" "color_marine"
+		"display_name" "Marine"
+		"description" "Discover Marine."
+		"hidden" "1"
+	}
+	"171"
+	{
+		"name" "color_lagoon"
+		"display_name" "Lagoon"
+		"description" "Discover Lagoon."
+		"hidden" "1"
+	}
+	"172"
+	{
+		"name" "color_arctic"
+		"display_name" "Arctic"
+		"description" "Discover Arctic."
+		"hidden" "1"
+	}
+	"173"
+	{
+		"name" "color_glacier"
+		"display_name" "Glacier"
+		"description" "Discover Glacier."
+		"hidden" "1"
+	}
+	"174"
+	{
+		"name" "color_cornflower"
+		"display_name" "Cornflower"
+		"description" "Discover Cornflower."
+		"hidden" "1"
+	}
+	"175"
+	{
+		"name" "color_bluebell"
+		"display_name" "Bluebell"
+		"description" "Discover Bluebell."
+		"hidden" "1"
+	}
+	"176"
+	{
+		"name" "color_hyacinth"
+		"display_name" "Hyacinth"
+		"description" "Discover Hyacinth."
+		"hidden" "1"
+	}
+	"177"
+	{
+		"name" "color_violet_blue"
+		"display_name" "Violet Blue"
+		"description" "Discover Violet Blue."
+		"hidden" "1"
+	}
+	"178"
+	{
+		"name" "color_royal"
+		"display_name" "Royal"
+		"description" "Discover Royal."
+		"hidden" "1"
+	}
+	"179"
+	{
+		"name" "color_imperial"
+		"display_name" "Imperial"
+		"description" "Discover Imperial."
+		"hidden" "1"
+	}
+	"180"
+	{
+		"name" "color_regal"
+		"display_name" "Regal"
+		"description" "Discover Regal."
+		"hidden" "1"
+	}
+	"181"
+	{
+		"name" "color_majesty"
+		"display_name" "Majesty"
+		"description" "Discover Majesty."
+		"hidden" "1"
+	}
+	"182"
+	{
+		"name" "color_crown"
+		"display_name" "Crown"
+		"description" "Discover Crown."
+		"hidden" "1"
+	}
+	"183"
+	{
+		"name" "color_topaz"
+		"display_name" "Topaz"
+		"description" "Discover Topaz."
+		"hidden" "1"
+	}
+	"184"
+	{
+		"name" "color_citrine"
+		"display_name" "Citrine"
+		"description" "Discover Citrine."
+		"hidden" "1"
+	}
+	"185"
+	{
+		"name" "color_peridot"
+		"display_name" "Peridot"
+		"description" "Discover Peridot."
+		"hidden" "1"
+	}
+
+	// ─── Tier 5: Rare (78) ───────────────────────────────────────────────────────
+	"186"
+	{
+		"name" "color_nebula"
+		"display_name" "Nebula"
+		"description" "Discover Nebula."
+		"hidden" "1"
+	}
+	"187"
+	{
+		"name" "color_cosmos"
+		"display_name" "Cosmos"
+		"description" "Discover Cosmos."
+		"hidden" "1"
+	}
+	"188"
+	{
+		"name" "color_aurora"
+		"display_name" "Aurora"
+		"description" "Discover Aurora."
+		"hidden" "1"
+	}
+	"189"
+	{
+		"name" "color_prism"
+		"display_name" "Prism"
+		"description" "Discover Prism."
+		"hidden" "1"
+	}
+	"190"
+	{
+		"name" "color_opal"
+		"display_name" "Opal"
+		"description" "Discover Opal."
+		"hidden" "1"
+	}
+	"191"
+	{
+		"name" "color_moonstone"
+		"display_name" "Moonstone"
+		"description" "Discover Moonstone."
+		"hidden" "1"
+	}
+	"192"
+	{
+		"name" "color_sunstone"
+		"display_name" "Sunstone"
+		"description" "Discover Sunstone."
+		"hidden" "1"
+	}
+	"193"
+	{
+		"name" "color_starlight"
+		"display_name" "Starlight"
+		"description" "Discover Starlight."
+		"hidden" "1"
+	}
+	"194"
+	{
+		"name" "color_comet"
+		"display_name" "Comet"
+		"description" "Discover Comet."
+		"hidden" "1"
+	}
+	"195"
+	{
+		"name" "color_meteor"
+		"display_name" "Meteor"
+		"description" "Discover Meteor."
+		"hidden" "1"
+	}
+	"196"
+	{
+		"name" "color_supernova"
+		"display_name" "Supernova"
+		"description" "Discover Supernova."
+		"hidden" "1"
+	}
+	"197"
+	{
+		"name" "color_quasar"
+		"display_name" "Quasar"
+		"description" "Discover Quasar."
+		"hidden" "1"
+	}
+	"198"
+	{
+		"name" "color_pulsar"
+		"display_name" "Pulsar"
+		"description" "Discover Pulsar."
+		"hidden" "1"
+	}
+	"199"
+	{
+		"name" "color_neutron"
+		"display_name" "Neutron"
+		"description" "Discover Neutron."
+		"hidden" "1"
+	}
+	"200"
+	{
+		"name" "color_plasma"
+		"display_name" "Plasma"
+		"description" "Discover Plasma."
+		"hidden" "1"
+	}
+	"201"
+	{
+		"name" "color_ether"
+		"display_name" "Ether"
+		"description" "Discover Ether."
+		"hidden" "1"
+	}
+	"202"
+	{
+		"name" "color_aether"
+		"display_name" "Aether"
+		"description" "Discover Aether."
+		"hidden" "1"
+	}
+	"203"
+	{
+		"name" "color_mirage"
+		"display_name" "Mirage"
+		"description" "Discover Mirage."
+		"hidden" "1"
+	}
+	"204"
+	{
+		"name" "color_phantom"
+		"display_name" "Phantom"
+		"description" "Discover Phantom."
+		"hidden" "1"
+	}
+	"205"
+	{
+		"name" "color_specter"
+		"display_name" "Specter"
+		"description" "Discover Specter."
+		"hidden" "1"
+	}
+	"206"
+	{
+		"name" "color_wraith"
+		"display_name" "Wraith"
+		"description" "Discover Wraith."
+		"hidden" "1"
+	}
+	"207"
+	{
+		"name" "color_shade"
+		"display_name" "Shade"
+		"description" "Discover Shade."
+		"hidden" "1"
+	}
+	"208"
+	{
+		"name" "color_gloom"
+		"display_name" "Gloom"
+		"description" "Discover Gloom."
+		"hidden" "1"
+	}
+	"209"
+	{
+		"name" "color_abyss"
+		"display_name" "Abyss"
+		"description" "Discover Abyss."
+		"hidden" "1"
+	}
+	"210"
+	{
+		"name" "color_zenith"
+		"display_name" "Zenith"
+		"description" "Discover Zenith."
+		"hidden" "1"
+	}
+	"211"
+	{
+		"name" "color_apex"
+		"display_name" "Apex"
+		"description" "Discover Apex."
+		"hidden" "1"
+	}
+	"212"
+	{
+		"name" "color_pinnacle"
+		"display_name" "Pinnacle"
+		"description" "Discover Pinnacle."
+		"hidden" "1"
+	}
+	"213"
+	{
+		"name" "color_summit"
+		"display_name" "Summit"
+		"description" "Discover Summit."
+		"hidden" "1"
+	}
+	"214"
+	{
+		"name" "color_horizon"
+		"display_name" "Horizon"
+		"description" "Discover Horizon."
+		"hidden" "1"
+	}
+	"215"
+	{
+		"name" "color_solstice"
+		"display_name" "Solstice"
+		"description" "Discover Solstice."
+		"hidden" "1"
+	}
+	"216"
+	{
+		"name" "color_equinox"
+		"display_name" "Equinox"
+		"description" "Discover Equinox."
+		"hidden" "1"
+	}
+	"217"
+	{
+		"name" "color_tempest"
+		"display_name" "Tempest"
+		"description" "Discover Tempest."
+		"hidden" "1"
+	}
+	"218"
+	{
+		"name" "color_zephyr"
+		"display_name" "Zephyr"
+		"description" "Discover Zephyr."
+		"hidden" "1"
+	}
+	"219"
+	{
+		"name" "color_nimbus"
+		"display_name" "Nimbus"
+		"description" "Discover Nimbus."
+		"hidden" "1"
+	}
+	"220"
+	{
+		"name" "color_cirrus"
+		"display_name" "Cirrus"
+		"description" "Discover Cirrus."
+		"hidden" "1"
+	}
+	"221"
+	{
+		"name" "color_stratus"
+		"display_name" "Stratus"
+		"description" "Discover Stratus."
+		"hidden" "1"
+	}
+	"222"
+	{
+		"name" "color_cumulus"
+		"display_name" "Cumulus"
+		"description" "Discover Cumulus."
+		"hidden" "1"
+	}
+	"223"
+	{
+		"name" "color_haze"
+		"display_name" "Haze"
+		"description" "Discover Haze."
+		"hidden" "1"
+	}
+	"224"
+	{
+		"name" "color_smog"
+		"display_name" "Smog"
+		"description" "Discover Smog."
+		"hidden" "1"
+	}
+	"225"
+	{
+		"name" "color_dust"
+		"display_name" "Dust"
+		"description" "Discover Dust."
+		"hidden" "1"
+	}
+	"226"
+	{
+		"name" "color_soot"
+		"display_name" "Soot"
+		"description" "Discover Soot."
+		"hidden" "1"
+	}
+	"227"
+	{
+		"name" "color_cinder"
+		"display_name" "Cinder"
+		"description" "Discover Cinder."
+		"hidden" "1"
+	}
+	"228"
+	{
+		"name" "color_ash_rose"
+		"display_name" "Ash Rose"
+		"description" "Discover Ash Rose."
+		"hidden" "1"
+	}
+	"229"
+	{
+		"name" "color_dusty_rose"
+		"display_name" "Dusty Rose"
+		"description" "Discover Dusty Rose."
+		"hidden" "1"
+	}
+	"230"
+	{
+		"name" "color_antique"
+		"display_name" "Antique"
+		"description" "Discover Antique."
+		"hidden" "1"
+	}
+	"231"
+	{
+		"name" "color_patina"
+		"display_name" "Patina"
+		"description" "Discover Patina."
+		"hidden" "1"
+	}
+	"232"
+	{
+		"name" "color_verdigris"
+		"display_name" "Verdigris"
+		"description" "Discover Verdigris."
+		"hidden" "1"
+	}
+	"233"
+	{
+		"name" "color_oxidized"
+		"display_name" "Oxidized"
+		"description" "Discover Oxidized."
+		"hidden" "1"
+	}
+	"234"
+	{
+		"name" "color_tarnish"
+		"display_name" "Tarnish"
+		"description" "Discover Tarnish."
+		"hidden" "1"
+	}
+	"235"
+	{
+		"name" "color_lichen"
+		"display_name" "Lichen"
+		"description" "Discover Lichen."
+		"hidden" "1"
+	}
+	"236"
+	{
+		"name" "color_moss_agate"
+		"display_name" "Moss Agate"
+		"description" "Discover Moss Agate."
+		"hidden" "1"
+	}
+	"237"
+	{
+		"name" "color_malachite"
+		"display_name" "Malachite"
+		"description" "Discover Malachite."
+		"hidden" "1"
+	}
+	"238"
+	{
+		"name" "color_lapis"
+		"display_name" "Lapis"
+		"description" "Discover Lapis."
+		"hidden" "1"
+	}
+	"239"
+	{
+		"name" "color_tanzanite"
+		"display_name" "Tanzanite"
+		"description" "Discover Tanzanite."
+		"hidden" "1"
+	}
+	"240"
+	{
+		"name" "color_alexandrite"
+		"display_name" "Alexandrite"
+		"description" "Discover Alexandrite."
+		"hidden" "1"
+	}
+	"241"
+	{
+		"name" "color_tourmaline"
+		"display_name" "Tourmaline"
+		"description" "Discover Tourmaline."
+		"hidden" "1"
+	}
+	"242"
+	{
+		"name" "color_garnet_rose"
+		"display_name" "Garnet Rose"
+		"description" "Discover Garnet Rose."
+		"hidden" "1"
+	}
+	"243"
+	{
+		"name" "color_carnelian"
+		"display_name" "Carnelian"
+		"description" "Discover Carnelian."
+		"hidden" "1"
+	}
+	"244"
+	{
+		"name" "color_jasper"
+		"display_name" "Jasper"
+		"description" "Discover Jasper."
+		"hidden" "1"
+	}
+	"245"
+	{
+		"name" "color_agate"
+		"display_name" "Agate"
+		"description" "Discover Agate."
+		"hidden" "1"
+	}
+	"246"
+	{
+		"name" "color_amber_glow"
+		"display_name" "Amber Glow"
+		"description" "Discover Amber Glow."
+		"hidden" "1"
+	}
+	"247"
+	{
+		"name" "color_tiger_eye"
+		"display_name" "Tiger Eye"
+		"description" "Discover Tiger Eye."
+		"hidden" "1"
+	}
+	"248"
+	{
+		"name" "color_sandstone"
+		"display_name" "Sandstone"
+		"description" "Discover Sandstone."
+		"hidden" "1"
+	}
+	"249"
+	{
+		"name" "color_terracotta_sun"
+		"display_name" "Terracotta Sun"
+		"description" "Discover Terracotta Sun."
+		"hidden" "1"
+	}
+	"250"
+	{
+		"name" "color_adobe"
+		"display_name" "Adobe"
+		"description" "Discover Adobe."
+		"hidden" "1"
+	}
+	"251"
+	{
+		"name" "color_paprika"
+		"display_name" "Paprika"
+		"description" "Discover Paprika."
+		"hidden" "1"
+	}
+	"252"
+	{
+		"name" "color_cayenne"
+		"display_name" "Cayenne"
+		"description" "Discover Cayenne."
+		"hidden" "1"
+	}
+	"253"
+	{
+		"name" "color_tabasco"
+		"display_name" "Tabasco"
+		"description" "Discover Tabasco."
+		"hidden" "1"
+	}
+	"254"
+	{
+		"name" "color_habanero"
+		"display_name" "Habanero"
+		"description" "Discover Habanero."
+		"hidden" "1"
+	}
+	"255"
+	{
+		"name" "color_mango"
+		"display_name" "Mango"
+		"description" "Discover Mango."
+		"hidden" "1"
+	}
+	"256"
+	{
+		"name" "color_papaya"
+		"display_name" "Papaya"
+		"description" "Discover Papaya."
+		"hidden" "1"
+	}
+	"257"
+	{
+		"name" "color_guava"
+		"display_name" "Guava"
+		"description" "Discover Guava."
+		"hidden" "1"
+	}
+	"258"
+	{
+		"name" "color_dragonfruit"
+		"display_name" "Dragonfruit"
+		"description" "Discover Dragonfruit."
+		"hidden" "1"
+	}
+	"259"
+	{
+		"name" "color_acai"
+		"display_name" "Acai"
+		"description" "Discover Acai."
+		"hidden" "1"
+	}
+	"260"
+	{
+		"name" "color_elderberry"
+		"display_name" "Elderberry"
+		"description" "Discover Elderberry."
+		"hidden" "1"
+	}
+	"261"
+	{
+		"name" "color_blackberry"
+		"display_name" "Blackberry"
+		"description" "Discover Blackberry."
+		"hidden" "1"
+	}
+	"262"
+	{
+		"name" "color_plum_wine"
+		"display_name" "Plum Wine"
+		"description" "Discover Plum Wine."
+		"hidden" "1"
+	}
+	"263"
+	{
+		"name" "color_fig"
+		"display_name" "Fig"
+		"description" "Discover Fig."
+		"hidden" "1"
+	}
+	"264"
+	{
+		"name" "color_raisin"
+		"display_name" "Raisin"
+		"description" "Discover Raisin."
+		"hidden" "1"
+	}
+}

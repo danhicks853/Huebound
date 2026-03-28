@@ -1,0 +1,198 @@
+
+
+[2026-02-23 22:18:10] Client version: 1769026246
+[2026-02-23 22:18:10] Failed to read store 'install' from 'D:\aigame\idlegame\export\config\config.vdf.tmp'
+[2026-02-23 22:18:10] Failed to read store 'install' from 'D:\aigame\idlegame\export\config\config.vdf.tmp'
+[2026-02-23 22:18:10] Failed to read store 'install' from 'D:\aigame\idlegame\export\config\config.vdf.tmp'
+[2026-02-23 22:18:10] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+
+
+[2026-02-23 22:18:52] Client version: 1769026246
+[2026-02-23 22:18:52] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:18:52] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:18:52] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:20:04] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:20:07] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-02-23 22:20:28] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:20:28] Failed to read store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf.tmp'
+[2026-02-23 22:20:29] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-02-23 22:20:29] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:20:29] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:20:30] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:20:32] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:20:35] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:21:07] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:21:07] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-02-23 22:22:10] Client version: 1769026246
+[2026-02-23 22:22:10] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:22:10] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:22:10] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:22:10] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-02-23 22:22:10] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:22:11] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-02-23 22:22:12] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:22:12] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-02-23 22:23:03] Client version: 1769026246
+[2026-02-23 22:23:03] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:23:03] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:23:03] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:23:03] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-02-23 22:23:03] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 22:23:04] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-02-23 22:23:04] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:23:05] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:23:07] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 22:23:09] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-02-23 23:22:12] Client version: 1769026246
+[2026-02-23 23:22:12] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 23:22:12] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 23:22:12] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 23:22:12] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-02-23 23:22:12] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-02-23 23:22:14] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-02-23 23:22:14] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 23:22:15] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-02-23 23:22:16] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-23 18:29:48] Client version: 1773426366
+[2026-03-23 18:29:48] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:29:48] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:29:48] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:30:12] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:30:13] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+
+
+[2026-03-23 18:30:47] Client version: 1773426366
+[2026-03-23 18:30:47] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:30:47] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:30:47] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:30:54] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:30:56] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+
+
+[2026-03-23 18:31:09] Client version: 1773426366
+[2026-03-23 18:31:09] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:09] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:09] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:13] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:14] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+
+
+[2026-03-23 18:31:26] Client version: 1773426366
+[2026-03-23 18:31:26] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:26] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:26] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:30] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:31] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+
+
+[2026-03-23 18:31:51] Client version: 1773426366
+[2026-03-23 18:31:51] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:51] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:51] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:51] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-23 18:31:51] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:31:53] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-23 18:31:54] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-23 18:31:55] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-23 18:31:57] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-23 18:31:58] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-23 18:37:45] Client version: 1773426366
+[2026-03-23 18:37:45] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:37:45] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:37:45] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:37:45] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-23 18:37:45] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 18:37:46] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-23 18:37:46] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-23 18:37:47] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-23 18:37:49] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-23 19:14:28] Client version: 1773426366
+[2026-03-23 19:14:28] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 19:14:28] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 19:14:28] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 19:14:28] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-23 19:14:28] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-23 19:14:29] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-23 19:14:30] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-23 19:14:30] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-23 19:14:32] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-24 20:08:22] Client version: 1773426366
+[2026-03-24 20:08:22] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 20:08:22] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 20:08:22] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 20:08:22] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-24 20:08:22] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 20:08:23] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-24 20:08:23] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-24 20:08:24] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-24 20:08:26] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-24 23:09:14] Client version: 1773426366
+[2026-03-24 23:09:14] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:09:14] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:09:14] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:09:14] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-24 23:09:14] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:09:16] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-24 23:09:16] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-24 23:09:17] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-24 23:09:18] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-24 23:09:19] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-24 23:14:05] Client version: 1773426366
+[2026-03-24 23:14:05] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:14:05] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:14:05] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:14:05] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-24 23:14:05] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-24 23:14:07] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-24 23:14:08] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-24 23:14:08] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-24 23:14:09] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-26 19:11:42] Client version: 1773426366
+[2026-03-26 19:11:42] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:11:42] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:11:42] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:12:22] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+
+
+[2026-03-26 19:17:27] Client version: 1773426366
+[2026-03-26 19:17:27] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:27] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:27] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:27] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-26 19:17:27] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:29] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-26 19:17:29] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-26 19:17:30] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-26 19:17:30] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-26 19:17:31] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+
+
+[2026-03-26 19:17:57] Client version: 1773426366
+[2026-03-26 19:17:57] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:57] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:57] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:58] Loaded store 'userlocal' from 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf' successfully
+[2026-03-26 19:17:58] Loaded store 'install' from 'D:\aigame\idlegame\export\config\config.vdf' successfully
+[2026-03-26 19:17:59] Flushed store 'install' to 'D:\aigame\idlegame\export\config\config.vdf'
+[2026-03-26 19:18:00] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'
+[2026-03-26 19:18:02] Flushed store 'userlocal' to 'D:\aigame\idlegame\export\userdata\57279372\config\localconfig.vdf'

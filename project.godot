@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Huebound"
+config/description="A color-mixing idle discovery game"
+run/main_scene="res://scenes/title_screen.tscn"
+config/features=PackedStringArray("4.6")
+config/icon="res://icon.svg"
+
+[autoload]
+
+DemoConfig="*res://scripts/autoloads/demo_config.gd"
+ColorPalette="*res://scripts/autoloads/color_palette.gd"
+GameState="*res://scripts/autoloads/game_state.gd"
+NodeFactory="*res://scripts/autoloads/node_factory.gd"
+SFX="*res://scripts/autoloads/sfx.gd"
+SteamManager="*res://scripts/autoloads/steam_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Huebound"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.06, 0.06, 0.1, 1)
+
+[steam]
+
+initialization/app_id=4459040
+initialization/initialize_on_startup=true
+initialization/embed_callbacks=true
+multiplayer_peer/max_channels=4
+
+[steam_server]
+
+initialization/embed_callbacks=false

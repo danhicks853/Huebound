@@ -1,0 +1,60 @@
+
+
+[2026-03-26 19:26:54] Client version: 1773426366
+[2026-03-26 19:26:54] ThreadedReadFromDisk: loading appinfo cache from: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-26 19:26:54] ThreadedReadFromDisk: failed to open file: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-26 19:26:54] CAppInfoCacheReadFromDiskThread took 0 milliseconds to initialize
+
+
+[2026-03-26 19:31:26] Client version: 1773426366
+[2026-03-26 19:31:26] ThreadedReadFromDisk: loading appinfo cache from: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-26 19:31:26] ThreadedReadFromDisk: failed to open file: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-26 19:31:26] CAppInfoCacheReadFromDiskThread took 0 milliseconds to initialize
+[2026-03-26 19:31:49] RequestAppInfoUpdate: AppIDs 7
+[2026-03-26 19:31:49] Change number 0->34680070, apps: 0/0, packages: 0/0
+[2026-03-26 19:31:49] Requesting 1 apps, 809 packages (meta data, 1024 prev attempts, expected 37 KB)
+[2026-03-26 19:31:50] Downloaded 1 apps via HTTP, 15 KB (3 KB compressed)
+[2026-03-26 19:31:50] Requesting 0 apps, 809 packages (full data, 1024 prev attempts, expected 220 KB)
+[2026-03-26 19:31:50] UpdatesJob: finished OK, apps updated 1 (15 KB), packages updated 809 (182 KB)
+[2026-03-26 19:31:50] Requesting 1787 apps, 0 packages (meta data, 1024 prev attempts, expected 83 KB)
+[2026-03-26 19:31:50] Requested 150 app access tokens, 93 received, 57 denied
+[2026-03-26 19:31:51] Updated SHAs with 93 new access tokens
+[2026-03-26 19:31:53] Downloaded 293 apps via HTTP, 4331 KB (974 KB compressed)
+[2026-03-26 19:31:53] Requesting 1494 apps, 0 packages (full data, 1024 prev attempts, expected 4773 KB)
+[2026-03-26 19:31:54] UpdatesJob: finished OK, apps updated 1787 (9128 KB), packages updated 0 (0 KB)
+[2026-03-26 19:31:54] UpdatesJob: apps still needs updates, run again
+[2026-03-26 19:31:54] Requesting 57 apps, 0 packages (meta data, 1024 prev attempts, expected 2 KB)
+[2026-03-26 19:31:55] Requested 57 app access tokens, 0 received, 57 denied
+[2026-03-26 19:31:55] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-03-26 19:31:59] ThreadedWriteToDisk: writing appinfo cache to: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-26 19:31:59] App cache write succeeded D:\aigame\idlegame\export_demo/appcache/appinfo.vdf (1788 apps, 4524 KB) in 33 ms
+
+
+[2026-03-26 19:32:14] Client version: 1773426366
+[2026-03-26 19:32:14] ThreadedReadFromDisk: loading appinfo cache from: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-26 19:32:14] ThreadedReadFromDisk: header version: 0x7564429
+[2026-03-26 19:32:14] ThreadedReadFromDisk: apps updated: 1788
+[2026-03-26 19:32:14] CAppInfoCacheReadFromDiskThread took 29 milliseconds to initialize
+[2026-03-26 19:32:15] RequestAppInfoUpdate: AppIDs 7
+[2026-03-26 19:32:15] Change number 34680070->34680076, apps: 0/6, packages: 0/0
+[2026-03-26 19:32:15] Requesting 58 apps, 0 packages (meta data, 1024 prev attempts, expected 2 KB)
+[2026-03-26 19:32:15] Requested 57 app access tokens, 0 received, 57 denied
+[2026-03-26 19:32:15] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+
+
+[2026-03-28 02:02:11] Client version: 1773426366
+[2026-03-28 02:02:11] ThreadedReadFromDisk: loading appinfo cache from: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-28 02:02:11] ThreadedReadFromDisk: header version: 0x7564429
+[2026-03-28 02:02:11] ThreadedReadFromDisk: apps updated: 1788
+[2026-03-28 02:02:11] CAppInfoCacheReadFromDiskThread took 29 milliseconds to initialize
+[2026-03-28 02:02:12] RequestAppInfoUpdate: AppIDs 7
+[2026-03-28 02:02:12] Packages changed: force all
+[2026-03-28 02:02:12] Apps changed: force all
+[2026-03-28 02:02:12] Change number 34680076->34709762, apps: 0/0, packages: 0/0
+[2026-03-28 02:02:12] Requesting 1788 apps, 809 packages (meta data, 1024 prev attempts, expected 121 KB)
+[2026-03-28 02:02:13] Requested 57 app access tokens, 0 received, 57 denied
+[2026-03-28 02:02:13] Downloaded 27 apps via HTTP, 587 KB (118 KB compressed)
+[2026-03-28 02:02:13] Requesting 85 apps, 0 packages (full data, 1024 prev attempts, expected 362 KB)
+[2026-03-28 02:02:13] UpdatesJob: finished OK, apps updated 112 (945 KB), packages updated 0 (0 KB)
+[2026-03-28 02:02:18] ThreadedWriteToDisk: writing appinfo cache to: D:\aigame\idlegame\export_demo/appcache/appinfo.vdf
+[2026-03-28 02:02:18] App cache write succeeded D:\aigame\idlegame\export_demo/appcache/appinfo.vdf (1788 apps, 4524 KB) in 46 ms
