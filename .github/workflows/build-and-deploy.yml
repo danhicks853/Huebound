@@ -28,17 +28,17 @@ jobs:
 
       - name: Build Full Game
         run: |
-          mkdir -p export
+          mkdir -p deploy/game
           sed -i 's/^const IS_DEMO\s*:=\s*true/const IS_DEMO := false/' scripts/autoloads/demo_config.gd
           grep "IS_DEMO" scripts/autoloads/demo_config.gd
-          godot --headless --export-release "Steam Windows" export/Huebound.exe
+          godot --headless --export-release "Steam Windows" deploy/game/Huebound.exe
 
       - name: Build Demo
         run: |
-          mkdir -p export_demo
+          mkdir -p deploy/demo
           sed -i 's/^const IS_DEMO\s*:=\s*false/const IS_DEMO := true/' scripts/autoloads/demo_config.gd
           grep "IS_DEMO" scripts/autoloads/demo_config.gd
-          godot --headless --export-release "Steam Windows" export_demo/Huebound_Demo.exe
+          godot --headless --export-release "Steam Windows" deploy/demo/Huebound_Demo.exe
           sed -i 's/^const IS_DEMO\s*:=\s*true/const IS_DEMO := false/' scripts/autoloads/demo_config.gd
 
       - name: Deploy Main Game to Steam
@@ -48,12 +48,12 @@ jobs:
           configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
           appId: 4459040
           buildDescription: "Build ${{ github.sha }}"
-          rootPath: .
-          depot1Path: export
+          rootPath: deploy
+          depot1Path: game
           releaseBranch: preview
 
       - name: Clean build output
-        run: sudo rm -rf BuildOutput
+        run: sudo rm -rf deploy/BuildOutput
 
       - name: Deploy Demo to Steam
         uses: game-ci/steam-deploy@v3
@@ -62,8 +62,8 @@ jobs:
           configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
           appId: 4555340
           buildDescription: "Demo Build ${{ github.sha }}"
-          rootPath: .
-          depot1Path: export_demo
+          rootPath: deploy
+          depot1Path: demo
           releaseBranch: preview
 
       - name: Notify Discord
