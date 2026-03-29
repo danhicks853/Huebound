@@ -74,9 +74,11 @@ jobs:
           BULLET_LIST=$(echo "$COMMITS_JSON" \
             | jq -r '.[] | "• " + (.message | split("\n")[0])')
 
-          PAYLOAD=$(jq -n \
-            --arg body "**New Patch:**\n${BULLET_LIST}\n\nLive on Preview branch now!" \
-            '{content: $body}')
+          MESSAGE="**New Patch:**
+${BULLET_LIST}
+
+Live on Preview branch now!"
+          PAYLOAD=$(jq -n --arg body "$MESSAGE" '{content: $body}')
 
           curl -s -X POST "$DISCORD_WEBHOOK" \
             -H "Content-Type: application/json" \
