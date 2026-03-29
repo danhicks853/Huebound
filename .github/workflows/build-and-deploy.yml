@@ -1,0 +1,64 @@
+name: Build and Deploy to Steam
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: "4.6.1"          # pin to exact version you use locally
+  EXPORT_NAME: Huebound
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: ${{ env.GODOT_VERSION }}
+          use-dotnet: false
+          include-templates: true
+
+      - name: Import Project
+        run: godot --headless --import
+
+      - name: Build Full Game
+        run: |
+          mkdir -p export
+          sed -i 's/^const IS_DEMO\s*:=\s*true/const IS_DEMO := false/' scripts/autoloads/demo_config.gd
+          grep "IS_DEMO" scripts/autoloads/demo_config.gd
+          godot --headless --export-release "Steam Windows" export/Huebound.exe
+
+      - name: Build Demo
+        run: |
+          mkdir -p export_demo
+          sed -i 's/^const IS_DEMO\s*:=\s*false/const IS_DEMO := true/' scripts/autoloads/demo_config.gd
+          grep "IS_DEMO" scripts/autoloads/demo_config.gd
+          godot --headless --export-release "Steam Windows" export_demo/Huebound_Demo.exe
+          sed -i 's/^const IS_DEMO\s*:=\s*true/const IS_DEMO := false/' scripts/autoloads/demo_config.gd
+
+      - name: Deploy Main Game to Steam
+        uses: game-ci/steam-deploy@v3
+        with:
+          username: ${{ secrets.STEAM_USERNAME }}
+          configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
+          appId: 4459040
+          buildDescription: "Build ${{ github.sha }}"
+          rootPath: export
+          depot1Path: .
+          releaseBranch: staging
+
+      - name: Deploy Demo to Steam
+        uses: game-ci/steam-deploy@v3
+        with:
+          username: ${{ secrets.STEAM_USERNAME }}
+          configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
+          appId: 4555340
+          buildDescription: "Demo Build ${{ github.sha }}"
+          rootPath: export_demo
+          depot1Path: .
+          releaseBranch: staging
