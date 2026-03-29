@@ -65,3 +65,20 @@ jobs:
           rootPath: .
           depot1Path: export_demo
           releaseBranch: preview
+
+      - name: Notify Discord
+        if: success()
+        env:
+          COMMITS_JSON: ${{ toJson(github.event.commits) }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          BULLET_LIST=$(echo "$COMMITS_JSON" \
+            | jq -r '.[] | "• " + (.message | split("\n")[0])')
+
+          PAYLOAD=$(jq -n \
+            --arg body "**New Patch:**\n${BULLET_LIST}\n\nLive on Preview branch now!" \
+            '{content: $body}')
+
+          curl -s -X POST "$DISCORD_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"
