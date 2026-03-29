@@ -52,6 +52,9 @@ jobs:
           depot1Path: export
           releaseBranch: preview
 
+      - name: Clean build output
+        run: rm -rf BuildOutput
+
       - name: Deploy Demo to Steam
         uses: game-ci/steam-deploy@v3
         with:
