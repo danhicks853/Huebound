@@ -2,7 +2,68 @@
 
 ## Overview
 
-Huebound uses a single export preset with a code flag to differentiate full game vs demo builds. The `IS_DEMO` constant in `demo_config.gd` controls feature restrictions.
+Huebound uses GitHub Actions CI/CD to automatically build and deploy to Steam. The workflow handles:
+- Building both full game and demo
+- Toggling the `IS_DEMO` flag automatically
+- Deploying to the correct Steam branch
+
+---
+
+## Git Workflow
+
+**ALWAYS follow this branch workflow:**
+
+1. **Create a feature branch** from `dev` when starting work
+   ```bash
+   git checkout dev
+   git pull origin dev
+   git checkout -b feature/your-work-description
+   ```
+
+2. **Work on the feature branch** — make all changes here
+
+3. **When complete, create PR to `dev` branch** (NOT master)
+   ```bash
+   git push origin feature/your-work-description
+   # Create PR via GitHub: feature → dev
+   ```
+
+4. **After PR is merged to `dev`, CI/CD publishes to Steam preview branch**
+   - User tests the build on Steam
+
+5. **User creates PR from `dev` to `master`**
+
+6. **After PR is merged to `master`, CI/CD publishes to Steam default branch**
+
+**NEVER push directly to `master`. All work goes through `dev` first.**
+
+---
+
+## CI/CD Deployment
+
+### What Happens Automatically
+
+| Trigger | Main Game | Demo |
+|---------|-----------|------|
+| Push to `dev` | Builds → uploads to default → promotes to `preview` | Builds → uploads to `default` |
+| Push to `master` | Builds → uploads to `default` | Builds → uploads to `default` |
+
+The workflow (`.github/workflows/steam-deploy.yml`):
+1. Checks out code
+2. Sets up Godot
+3. Installs GodotSteam export templates
+4. Builds full game (`IS_DEMO = false`)
+5. Builds demo (`IS_DEMO = true`)
+6. Deploys demo to Steam default branch
+7. Deploys main game to default branch
+8. On dev branch: promotes main game to preview branch
+
+### Manual Override
+
+You can manually trigger a build via GitHub Actions:
+1. Go to Actions → Build and Deploy to Steam
+2. Click "Run workflow"
+3. Select branch and run
 
 ---
 
@@ -15,118 +76,66 @@ Huebound uses a single export preset with a code flag to differentiate full game
 | **Splitter node** | Available | Blocked |
 | **Export folder** | `export/` | `export_demo/` |
 | **Steam App ID** | 4459040 | 4555340 |
+| **Release branch** | `preview` (dev) / `default` (master) | `default` |
 
 ---
 
-## Build Steps
+## Steam App IDs
 
-### Step 1: Build Full Game
-
-1. **Verify demo flag is OFF**:
-   ```gdscript
-   # scripts/autoloads/demo_config.gd
-   const IS_DEMO := false
-   ```
-
-2. **Export from Godot**:
-   - Project → Export → "Steam Windows" → Export Project
-   - Output: `d:\aigame\idlegame\export\Huebound.exe`
-
-### Step 2: Build Demo
-
-1. **Toggle demo flag ON**:
-   ```gdscript
-   # scripts/autoloads/demo_config.gd
-   const IS_DEMO := true
-   ```
-
-2. **Export from Godot**:
-   - Project → Export → "Steam Windows" → Export Project
-   - Output: `d:\aigame\idlegame\export_demo\Huebound.exe`
-
-3. **Toggle flag back to FALSE** for normal development
+| App | App ID | Depot ID |
+|-----|--------|----------|
+| Main Game | 4459040 | 4459041 |
+| Demo | 4555340 | 4555341 |
 
 ---
 
-## Steam Upload
+## Local Development (If Needed)
 
-### Option A: Manual SteamCMD
+If you need to build manually:
 
-```powershell
-# Full game
-cd d:\aigame\idlegame\export
-.\steamcmd.exe +login z932074 +run_app_build "D:\aigame\idlegame\steam\build\app_build.vdf" +quit
-
-# Demo
-cd d:\aigame\idlegame\export_demo
-.\steamcmd.exe +login z932074 +run_app_build "D:\aigame\idlegame\steam\build\app_build_demo.vdf" +quit
+### Build Full Game
+```bash
+# Ensure IS_DEMO is false in scripts/autoloads/demo_config.gd
+godot --headless --export-release "Steam Windows" export/Huebound.exe
 ```
 
-### Option B: Automated (Single Session)
+### Build Demo
+```bash
+# Set IS_DEMO = true in scripts/autoloads/demo_config.gd
+godot --headless --export-release "Steam Windows" export_demo/Huebound.exe
 
-Copy `steamcmd.exe` to one location and run both builds:
-```powershell
-cd d:\aigame\idlegame\export_demo
-.\steamcmd.exe +login z932074 +run_app_build "D:\aigame\idlegame\steam\build\app_build.vdf" +run_app_build "D:\aigame\idlegame\steam\build\app_build_demo.vdf" +quit
+# Reset to false for development
 ```
-
----
-
-## Build Config Files
-
-### Main App (`steam/build/app_build.vdf`)
-```vdf
-"AppBuild"
-{
-	"AppID" "4459040"
-	"Desc" "Huebound Early Access build"
-	"ContentRoot" "D:\aigame\idlegame\export\"
-	"BuildOutput" "..\output\"
-	"Depots"
-	{
-		"4459041" "depot_build_windows.vdf"
-	}
-}
-```
-
-### Demo (`steam/build/app_build_demo.vdf`)
-```vdf
-"AppBuild"
-{
-	"AppID" "4555340"
-	"Desc" "Huebound Demo build"
-	"ContentRoot" "D:\aigame\idlegame\export_demo\"
-	"BuildOutput" "..\output\"
-	"Depots"
-	{
-		"4555341" "depot_build_demo.vdf"
-	}
-}
-```
-
----
-
-## Critical Checklist
-
-- [ ] `demo_config.gd` has `IS_DEMO = false` before full game export
-- [ ] `demo_config.gd` has `IS_DEMO = true` before demo export
-- [ ] `demo_config.gd` reset to `IS_DEMO = false` after both exports
-- [ ] Both `export/` and `export_demo/` folders exist with builds
-- [ ] SteamCMD login successful
-- [ ] Both builds appear in Steamworks after upload
 
 ---
 
 ## Troubleshooting
 
 ### Demo has full game content
-**Cause**: Exported with `IS_DEMO = false`
-**Fix**: Toggle flag, re-export demo, verify in `export_demo/`
+**Cause**: CI/CD or manual export had `IS_DEMO = false`
+**Fix**: Check the workflow run logs to verify the sed command changed the flag
 
-### SteamCMD can't find executable
-**Cause**: steamcmd.exe not in current directory
-**Fix**: Use `.\steamcmd.exe` syntax or copy steamcmd.exe to export folder
+### Build failed in CI/CD
+**Cause**: Usually missing secrets or GodotSteam templates
+**Fix**: 
+- Verify `STEAM_WEB_API_KEY` and `STEAM_CONFIG_VDF` secrets are set
+- Check GodotSteam template download step
 
-### Build uploads but doesn't work
-**Cause**: Missing GodotSteam DLLs
-**Fix**: Verify `libgodotsteam.windows.template_release.x86_64.dll` is in export folder
+### Preview branch not updating
+**Cause**: `STEAM_BUILD_ID` secret not set after main game upload
+**Fix**: The workflow logs show the build ID - set it as a secret for auto-promotion
+
+---
+
+## Secrets Required
+
+In GitHub repo Settings → Secrets and variables → Actions:
+
+| Secret | Required | Purpose |
+|--------|----------|---------|
+| `STEAM_WEB_API_KEY` | Yes | Steam Web API key for authentication |
+| `STEAM_CONFIG_VDF` | Yes | Steam depot configuration |
+| `STEAM_BUILD_ID` | No | Main game build ID for preview promotion |
+| `STEAM_DEMO_BUILD_ID` | No | Demo build ID (not used - demo stays on default) |
+
+*Last Updated: 2026-03-29*

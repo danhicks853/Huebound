@@ -50,25 +50,23 @@ Use the copy in `steam/store_page.md` to fill out:
 
 See `steam/GODOTSTEAM_SETUP.md` for full integration instructions.
 
-### 5. Export the Game
+### 5. Export and Upload
 
+**Normal workflow (recommended):**
+- Push changes to `dev` or `master` branch
+- GitHub Actions automatically builds and deploys
+- See `.github/workflows/steam-deploy.yml` for details
+
+**Manual export (only if CI/CD is broken):**
 ```bash
 # In Godot Editor:
 # Project → Export → "Steam Windows" preset → Export Project
 # Output to: export/Huebound.exe
 ```
 
-Or from command line:
+Manual upload via SteamCMD:
 ```bash
-# Windows export
-D:\godot\Godot.exe --headless --export-release "Steam Windows" export/Huebound.exe
-```
-
-### 6. Upload Build via SteamCMD
-
-```bash
-# Navigate to your SteamCMD installation
-steamcmd +login YOUR_STEAM_USERNAME +run_app_build "D:\Huebound\idlegame\steam\build\app_build.vdf" +quit
+steamcmd +login YOUR_STEAM_USERNAME +run_app_build "steam/build/app_build.vdf" +quit
 ```
 
 You'll be prompted for your password and Steam Guard code.
