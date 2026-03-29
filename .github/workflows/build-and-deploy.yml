@@ -53,7 +53,7 @@ jobs:
           releaseBranch: preview
 
       - name: Clean build output
-        run: rm -rf BuildOutput
+        run: sudo rm -rf BuildOutput
 
       - name: Deploy Demo to Steam
         uses: game-ci/steam-deploy@v3
