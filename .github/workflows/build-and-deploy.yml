@@ -48,8 +48,8 @@ jobs:
           configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
           appId: 4459040
           buildDescription: "Build ${{ github.sha }}"
-          rootPath: export
-          depot1Path: .
+          rootPath: .
+          depot1Path: export
           releaseBranch: staging
 
       - name: Deploy Demo to Steam
@@ -59,6 +59,6 @@ jobs:
           configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
           appId: 4555340
           buildDescription: "Demo Build ${{ github.sha }}"
-          rootPath: export_demo
-          depot1Path: .
+          rootPath: .
+          depot1Path: export_demo
           releaseBranch: staging
