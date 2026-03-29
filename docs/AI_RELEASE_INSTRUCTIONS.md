@@ -1,19 +1,50 @@
 # Huebound — AI Release Instructions
 
-This document provides step-by-step instructions for an AI agent to build and release Huebound to Steam.
+This document provides instructions for an AI agent working on Huebound releases.
 
 ---
 
-## Critical: Demo Flag Toggle
+## Git Workflow
 
-**THIS IS THE MOST IMPORTANT STEP.** The demo is NOT a separate export preset. It's the same preset with a code flag changed.
+**ALWAYS follow this branch workflow:**
 
-| Build | IS_DEMO Value | Export Folder |
-|-------|---------------|---------------|
-| Full Game | `false` | `export/` |
-| Demo | `true` | `export_demo/` |
+1. **Create a feature branch** from `dev` when starting work
+   ```bash
+   git checkout dev
+   git pull origin dev
+   git checkout -b feature/your-work-description
+   ```
 
-File to modify: `d:\aigame\idlegame\scripts\autoloads\demo_config.gd`
+2. **Work on the feature branch** — make all changes here
+
+3. **When complete, create PR to `dev` branch**
+   ```bash
+   git push origin feature/your-work-description
+   # Create PR via GitHub: feature → dev
+   ```
+
+4. **After PR is merged to `dev`, CI/CD automatically publishes to Steam preview branch**
+
+5. **User creates PR from `dev` to `master`**
+
+6. **After PR is merged to `master`, CI/CD automatically publishes to Steam default branch**
+
+**NEVER push directly to `master`. All work goes through `dev` first.**
+
+---
+
+## CI/CD Handles Everything
+
+The GitHub Actions workflow (`.github/workflows/steam-deploy.yml`) automatically:
+
+1. ✅ Sets `IS_DEMO = false` and builds full game
+2. ✅ Sets `IS_DEMO = true` and builds demo
+3. ✅ Resets `IS_DEMO = false` after builds
+4. ✅ Uploads demo to Steam default branch
+5. ✅ Uploads main game to Steam default branch
+6. ✅ Promotes main game to preview branch (on dev merge only)
+
+**Do not manually toggle `IS_DEMO` or run manual builds unless specifically requested.**
 
 ---
 
@@ -25,133 +56,43 @@ File to modify: `d:\aigame\idlegame\scripts\autoloads\demo_config.gd`
 | Depot ID (Main) | 4459041 |
 | App ID (Demo) | 4555340 |
 | Depot ID (Demo) | 4555341 |
-| Godot Path | `C:\Users\danhi\OneDrive\Desktop\Godot_v4.6.1-stable_win64.exe` |
-| SteamCMD | `d:\aigame\idlegame\export_demo\steamcmd.exe` |
+| Dev branch → | Preview branch on Steam |
+| Master branch → | Default branch on Steam |
 
 ---
 
-## Phase 1: Build Full Game
+## When to Intervene
 
-### Step 1.1: Verify IS_DEMO = false
+Only perform manual builds if:
 
-Check `d:\aigame\idlegame\scripts\autoloads\demo_config.gd`:
-```gdscript
-const IS_DEMO := false
-```
+1. **CI/CD is broken** and a hotfix is needed urgently
+2. **User specifically requests** a manual build
+3. **Testing locally** before submitting a PR
 
-If it's `true`, change it to `false`.
-
-### Step 1.2: Export Full Game
+### Manual Build Steps (Only If Needed)
 
 ```powershell
-C:\Users\danhi\OneDrive\Desktop\Godot_v4.6.1-stable_win64.exe --headless --export-release "Steam Windows" d:\aigame\idlegame\export\Huebound.exe
-```
+# Full game
+godot --headless --export-release "Steam Windows" export/Huebound.exe
 
-Verify output: `d:\aigame\idlegame\export\Huebound.exe` exists.
-
----
-
-## Phase 2: Build Demo
-
-### Step 2.1: Set IS_DEMO = true
-
-Edit `d:\aigame\idlegame\scripts\autoloads\demo_config.gd`:
-```gdscript
-const IS_DEMO := true
-```
-
-### Step 2.2: Export Demo
-
-```powershell
-C:\Users\danhi\OneDrive\Desktop\Godot_v4.6.1-stable_win64.exe --headless --export-release "Steam Windows" d:\aigame\idlegame\export_demo\Huebound.exe
-```
-
-Verify output: `d:\aigame\idlegame\export_demo\Huebound.exe` exists.
-
-### Step 2.3: Reset IS_DEMO = false
-
-**IMPORTANT**: Set the flag back for normal development:
-```gdscript
-const IS_DEMO := false
+# Demo
+# Edit scripts/autoloads/demo_config.gd: const IS_DEMO := true
+godot --headless --export-release "Steam Windows" export_demo/Huebound.exe
+# Reset: const IS_DEMO := false
 ```
 
 ---
 
-## Phase 3: Upload to Steam
+## Common Issues
 
-### Step 3.1: Verify Builds Exist
+### "CI/CD failed"
+- Check GitHub Actions logs for the specific error
+- Usually missing secrets or template issues
 
-Check both folders have the `.exe`:
-- `d:\aigame\idlegame\export\Huebound.exe` (full game)
-- `d:\aigame\idlegame\export_demo\Huebound.exe` (demo)
-
-### Step 3.2: Run SteamCMD
-
-```powershell
-cd d:\aigame\idlegame\export_demo
-.\steamcmd.exe +login z932074 +run_app_build "D:\aigame\idlegame\steam\build\app_build.vdf" +run_app_build "D:\aigame\idlegame\steam\build\app_build_demo.vdf" +quit
-```
-
-**Expected prompts:**
-1. Password for z932074
-2. Steam Guard code
-
-**What happens:**
-1. First build uploads main game (4459040) from `export/`
-2. Second build uploads demo (4555340) from `export_demo/`
-3. Both appear in Steamworks → Builds
+### "Wrong branch deployed"
+- Verify the trigger was from correct branch
+- Dev → preview, Master → default
 
 ---
 
-## Complete Checklist
-
-Before starting:
-- [ ] Godot executable exists at desktop path
-- [ ] `steamcmd.exe` exists in `export_demo/` (or copy it there)
-
-After Phase 1:
-- [ ] `IS_DEMO` was `false` during export
-- [ ] `export\Huebound.exe` exists
-
-After Phase 2:
-- [ ] `IS_DEMO` was toggled to `true` for demo export
-- [ ] `export_demo\Huebound.exe` exists
-- [ ] `IS_DEMO` reset to `false` after both exports
-
-After Phase 3:
-- [ ] SteamCMD login successful
-- [ ] Both builds show in Steamworks
-
----
-
-## Common Mistakes
-
-### "Demo has all 256 colors"
-**Cause**: Forgot to set `IS_DEMO = true` before demo export.  
-**Fix**: Toggle flag, delete `export_demo\*`, re-export demo.
-
-### "steamcmd.exe not found"
-**Cause**: Running from wrong directory or wrong path.  
-**Fix**: `cd d:\aigame\idlegame\export_demo` first, then use `.\steamcmd.exe`
-
-### "Full game uploaded as demo"
-**Cause**: Both depot configs pointed to same folder.  
-**Fix**: Verify `app_build.vdf` uses `export/` and `app_build_demo.vdf` uses `export_demo/`
-
----
-
-## Build Config Reference
-
-Main app VDF (`steam/build/app_build.vdf`):
-- AppID: 4459040
-- ContentRoot: `D:\aigame\idlegame\export\`
-- Depot: 4459041
-
-Demo VDF (`steam/build/app_build_demo.vdf`):
-- AppID: 4555340
-- ContentRoot: `D:\aigame\idlegame\export_demo\`
-- Depot: 4555341
-
----
-
-*Last Updated: 2026-03-28*
+*Last Updated: 2026-03-29*

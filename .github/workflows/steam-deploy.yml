@@ -1,0 +1,109 @@
+name: Build and Deploy to Steam
+
+on:
+  push:
+    branches:
+      - dev
+      - master
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: "4.6.1"
+  EXPORT_NAME: Huebound
+  PROJECT_PATH: .
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v1
+        with:
+          version: ${{ env.GODOT_VERSION }}
+          use-dotnet: false
+
+      - name: Install GodotSteam Templates
+        run: |
+          wget -q https://github.com/GodotSteam/GodotSteam/releases/download/v4.6/godotsteam-g46-templates.zip
+          unzip -q godotsteam-g46-templates.zip -d ~/godotsteam
+          mkdir -p ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+          cp ~/godotsteam/windows_* ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/ || true
+
+      - name: Build Full Game
+        run: |
+          sed -i 's/const IS_DEMO := true/const IS_DEMO := false/g' scripts/autoloads/demo_config.gd
+          godot --headless --export-release "Steam Windows" export/Huebound.exe
+        working-directory: ${{ env.PROJECT_PATH }}
+
+      - name: Build Demo
+        run: |
+          sed -i 's/const IS_DEMO := false/const IS_DEMO := true/g' scripts/autoloads/demo_config.gd
+          godot --headless --export-release "Steam Windows" export_demo/Huebound.exe
+          sed -i 's/const IS_DEMO := true/const IS_DEMO := false/g' scripts/autoloads/demo_config.gd
+        working-directory: ${{ env.PROJECT_PATH }}
+
+      # Deploy Demo (always to default branch - no preview for demo)
+      - name: Deploy Demo to Steam
+        uses: game-ci/steam-deploy@v1
+        with:
+          appId: 4555340
+          buildDescription: "GitHub Actions Demo Build ${{ github.run_number }}"
+          rootPath: export_demo
+          depot1Path: .
+          releaseBranch: default
+          localContentServer: false
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
+          STEAM_CONFIG_VDF: ${{ secrets.STEAM_CONFIG_VDF }}
+
+      # Deploy Main Game
+      # - On master branch: to default branch
+      # - On dev branch: to preview branch
+      - name: Deploy Main Game to Steam (Default)
+        if: github.ref == 'refs/heads/master'
+        uses: game-ci/steam-deploy@v1
+        with:
+          appId: 4459040
+          buildDescription: "GitHub Actions Build ${{ github.run_number }}"
+          rootPath: export
+          depot1Path: .
+          releaseBranch: default
+          localContentServer: false
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
+          STEAM_CONFIG_VDF: ${{ secrets.STEAM_CONFIG_VDF }}
+
+      - name: Deploy Main Game to Steam (Preview)
+        if: github.ref == 'refs/heads/dev'
+        uses: game-ci/steam-deploy@v1
+        with:
+          appId: 4459040
+          buildDescription: "GitHub Actions Preview Build ${{ github.run_number }}"
+          rootPath: export
+          depot1Path: .
+          releaseBranch: default
+          localContentServer: false
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
+          STEAM_CONFIG_VDF: ${{ secrets.STEAM_CONFIG_VDF }}
+
+      # Promote main game to preview branch (only on dev)
+      - name: Promote to Preview Branch
+        if: github.ref == 'refs/heads/dev'
+        env:
+          STEAM_WEB_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
+          STEAM_BUILD_ID: ${{ secrets.STEAM_BUILD_ID }}
+        run: |
+          if [ -n "$STEAM_BUILD_ID" ]; then
+            echo "Promoting main build to preview branch..."
+            curl -X POST "https://partner.steam-api.com/ISteamApps/SetAppBuildLive/v1/" \
+              -d "key=${STEAM_WEB_API_KEY}" \
+              -d "appid=4459040" \
+              -d "buildid=${STEAM_BUILD_ID}" \
+              -d "betakey=preview"
+          else
+            echo "STEAM_BUILD_ID not set - skipping preview promotion"
+          fi

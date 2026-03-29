@@ -133,8 +133,7 @@ Single preset `"Steam Windows"` used for both builds:
 
 1. No undo system
 2. Single save file
-3. Demo requires manual IS_DEMO toggle + separate export
-4. Web export: GodotSteam features disabled gracefully
+3. Web export: GodotSteam features disabled gracefully
 
 ---
 
