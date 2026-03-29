@@ -64,7 +64,6 @@ jobs:
           buildDescription: "Demo Build ${{ github.sha }}"
           rootPath: deploy
           depot1Path: demo
-          releaseBranch: preview
 
       - name: Notify Discord
         if: success()
