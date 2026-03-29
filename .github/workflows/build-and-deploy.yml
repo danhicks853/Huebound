@@ -50,7 +50,7 @@ jobs:
           buildDescription: "Build ${{ github.sha }}"
           rootPath: .
           depot1Path: export
-          releaseBranch: staging
+          releaseBranch: preview
 
       - name: Deploy Demo to Steam
         uses: game-ci/steam-deploy@v3
@@ -61,4 +61,4 @@ jobs:
           buildDescription: "Demo Build ${{ github.sha }}"
           rootPath: .
           depot1Path: export_demo
-          releaseBranch: staging
+          releaseBranch: preview
