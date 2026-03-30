@@ -93,9 +93,9 @@ func _process(delta: float) -> void:
 			node_cps = 0.0
 			_cps_history.clear()
 	
-	# Upkeep: drain currency per second (only after first orb processed)
+	# Upkeep: drain currency per second (only after first orb processed, skip in zen mode)
 	var upkeep = node_def.get("upkeep", 0.0)
-	if upkeep > 0.0 and _has_processed:
+	if upkeep > 0.0 and _has_processed and not GameState.zen_mode:
 		var cost = upkeep * delta * GameState.game_speed
 		if GameState.currency < cost:
 			return # Stall if can't afford upkeep
@@ -196,6 +196,9 @@ func _process_seller(_delta: float, _rate: float) -> void:
 	while not input_buffer.is_empty():
 		var orb = input_buffer.pop_front()
 		var sale = _palette.sell_color(orb.color, orb.sources)
+		# In zen mode: no currency earned, just discovery
+		if GameState.zen_mode:
+			continue
 		# Small bonus for mixing more sources (linear, not exponential)
 		var unique_sources = orb.sources.size()
 		var mix_mult = 1.0 + max(unique_sources - 1, 0) * 0.25

@@ -4,7 +4,9 @@ signal currency_changed(amount: float)
 signal currency_rate_changed(rate: float)
 
 const _SAVE_FILENAME := "huebound_save.json"
+const _ZEN_SAVE_FILENAME := "huebound_zen_save.json"
 const CLOUD_SAVE_FILE := "huebound_save.json"
+const CLOUD_ZEN_SAVE_FILE := "huebound_zen_save.json"
 
 # Shared save path so demo and full game access the same file.
 # On web exports, user:// (IndexedDB) is the only option.
@@ -17,8 +19,11 @@ static func _get_shared_save_dir() -> String:
 static func get_save_path() -> String:
 	return _get_shared_save_dir().path_join(_SAVE_FILENAME)
 
+static func get_zen_save_path() -> String:
+	return _get_shared_save_dir().path_join(_ZEN_SAVE_FILENAME)
+
 var SAVE_FILE: String :
-	get: return get_save_path()
+	get: return get_save_path() if not zen_mode else get_zen_save_path()
 
 var currency: float = 50.0 : set = _set_currency
 var total_earned: float = 0.0
@@ -36,6 +41,9 @@ var prestige_count: int = 0
 var prestige_sources: Array[String] = []  # color names chosen as permanent sources
 var discoveries_since_prestige: int = 0
 var endgame_seen: bool = false
+
+# Zen Mode: no currency, no prestiges, instant color discovery, auto-add nodes
+var zen_mode: bool = false
 
 # Colorblind mode: 0 = Off, 1 = Protanopia, 2 = Deuteranopia, 3 = Tritanopia
 var colorblind_mode: int = 0
@@ -250,6 +258,7 @@ func save_game() -> void:
 		"prestige_sources": prestige_sources.duplicate(),
 		"discoveries_since_prestige": discoveries_since_prestige,
 		"endgame_seen": endgame_seen,
+		"zen_mode": zen_mode,
 		"colorblind_mode": colorblind_mode,
 		"orb_quality": orb_quality,
 		"ui_scale": ui_scale,
@@ -270,7 +279,10 @@ func save_game() -> void:
 		if OS.has_feature("web"):
 			JavaScriptBridge.eval("window.setTimeout(function() { FS.syncfs(false, function(err) {}); }, 100);")
 	# Also write to Steam Cloud if available
-	SteamManager.cloud_save(CLOUD_SAVE_FILE, json_string)
+	if zen_mode:
+		SteamManager.cloud_save(CLOUD_ZEN_SAVE_FILE, json_string)
+	else:
+		SteamManager.cloud_save(CLOUD_SAVE_FILE, json_string)
 
 func _migrate_legacy_save() -> void:
 	# If no save at the shared path but one exists at the old user:// location, copy it over.
@@ -306,14 +318,16 @@ func _is_save_compatible(json_string: String) -> bool:
 
 func load_game() -> void:
 	_migrate_legacy_save()
+	var cloud_file = CLOUD_ZEN_SAVE_FILE if zen_mode else CLOUD_SAVE_FILE
+	var local_path = SAVE_FILE
 	var json_string := ""
 	# Try Steam Cloud first
-	var cloud_data = SteamManager.cloud_load(CLOUD_SAVE_FILE)
+	var cloud_data = SteamManager.cloud_load(cloud_file)
 	if cloud_data != "":
 		# Compare timestamps: use whichever save is newer
 		var local_data := ""
-		if FileAccess.file_exists(SAVE_FILE):
-			var f = FileAccess.open(SAVE_FILE, FileAccess.READ)
+		if FileAccess.file_exists(local_path):
+			var f = FileAccess.open(local_path, FileAccess.READ)
 			if f:
 				local_data = f.get_as_text()
 				f.close()
@@ -325,9 +339,9 @@ func load_game() -> void:
 			json_string = cloud_data
 	else:
 		# No cloud save — use local
-		if not FileAccess.file_exists(SAVE_FILE):
+		if not FileAccess.file_exists(local_path):
 			return
-		var file = FileAccess.open(SAVE_FILE, FileAccess.READ)
+		var file = FileAccess.open(local_path, FileAccess.READ)
 		if not file:
 			return
 		json_string = file.get_as_text()
@@ -379,6 +393,7 @@ func load_game() -> void:
 			prestige_sources.append(str(s))
 		discoveries_since_prestige = int(data.get("discoveries_since_prestige", 0))
 		endgame_seen = data.get("endgame_seen", false)
+		zen_mode = bool(data.get("zen_mode", false))
 		colorblind_mode = int(data.get("colorblind_mode", 0))
 		orb_quality = int(data.get("orb_quality", 2))
 		ui_scale = float(data.get("ui_scale", 1.0))
@@ -405,6 +420,7 @@ func reset_state() -> void:
 	prestige_sources.clear()
 	discoveries_since_prestige = 0
 	endgame_seen = false
+	zen_mode = false
 	var nf = get_node_or_null("/root/NodeFactory")
 	if nf:
 		nf.node_purchase_counts.clear()
@@ -439,26 +455,35 @@ func prestige_reset() -> void:
 		nf.connections.clear()
 
 func has_save() -> bool:
-	if FileAccess.file_exists(SAVE_FILE):
-		var f = FileAccess.open(SAVE_FILE, FileAccess.READ)
+	var save_path = get_zen_save_path() if zen_mode else get_save_path()
+	if FileAccess.file_exists(save_path):
+		var f = FileAccess.open(save_path, FileAccess.READ)
 		if f:
 			var txt = f.get_as_text()
 			f.close()
 			if _is_save_compatible(txt):
 				return true
-	# Check legacy user:// path (pre-shared-path saves)
-	if not OS.has_feature("web") and FileAccess.file_exists("user://huebound_save.json"):
+	# Check legacy user:// path (pre-shared-path saves) — only for normal mode
+	if not zen_mode and not OS.has_feature("web") and FileAccess.file_exists("user://huebound_save.json"):
 		var f = FileAccess.open("user://huebound_save.json", FileAccess.READ)
 		if f:
 			var txt = f.get_as_text()
 			f.close()
 			if _is_save_compatible(txt):
 				return true
-	if SteamManager.cloud_has_file(CLOUD_SAVE_FILE):
-		var cloud_data = SteamManager.cloud_load(CLOUD_SAVE_FILE)
+	var cloud_file = CLOUD_ZEN_SAVE_FILE if zen_mode else CLOUD_SAVE_FILE
+	if SteamManager.cloud_has_file(cloud_file):
+		var cloud_data = SteamManager.cloud_load(cloud_file)
 		if _is_save_compatible(cloud_data):
 			return true
 	return false
+
+func _has_zen_save() -> bool:
+	var was_zen = zen_mode
+	zen_mode = true
+	var result = has_save()
+	zen_mode = was_zen
+	return result
 
 func _get_save_time(json_string: String) -> float:
 	var json = JSON.new()
