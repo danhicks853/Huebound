@@ -59,7 +59,9 @@ jobs:
           localContentServer: false
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-          STEAM_CONFIG_VDF: ${{ secrets.STEAM_CONFIG_VDF }}
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+          STEAM_TOTP_SECRET: ${{ secrets.STEAM_TOTP_SECRET }}
 
       # Deploy Main Game
       # - On master branch: to default branch
@@ -76,7 +78,9 @@ jobs:
           localContentServer: false
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-          STEAM_CONFIG_VDF: ${{ secrets.STEAM_CONFIG_VDF }}
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+          STEAM_TOTP_SECRET: ${{ secrets.STEAM_TOTP_SECRET }}
 
       - name: Deploy Main Game to Steam (Preview)
         if: github.ref == 'refs/heads/dev'
@@ -90,7 +94,9 @@ jobs:
           localContentServer: false
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-          STEAM_CONFIG_VDF: ${{ secrets.STEAM_CONFIG_VDF }}
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+          STEAM_TOTP_SECRET: ${{ secrets.STEAM_TOTP_SECRET }}
 
       # Promote main game to preview branch (only on dev)
       - name: Promote to Preview Branch
