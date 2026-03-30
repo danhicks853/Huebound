@@ -20,18 +20,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Godot
-        uses: chickensoft-games/setup-godot@v1
+        uses: chickensoft-games/setup-godot@v2
         with:
           version: ${{ env.GODOT_VERSION }}
           use-dotnet: false
+          include-templates: true
 
-      - name: Install GodotSteam Templates
+      - name: Install GodotSteam DLLs
         run: |
           mkdir -p ~/godotsteam
           wget -q https://codeberg.org/godotsteam/godotsteam/releases/download/v4.18/godotsteam-g461-s164-gs418-templates.tar.xz -O ~/godotsteam/templates.tar.xz
           tar -xf ~/godotsteam/templates.tar.xz -C ~/godotsteam
-          mkdir -p ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
-          cp ~/godotsteam/windows_* ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/ || true
+          cp ~/godotsteam/libgodotsteam.windows.template_release.x86_64.dll ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/windows_release_x86_64.exe || true
+          cp ~/godotsteam/libgodotsteam.windows.template_debug.x86_64.dll ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/windows_debug_x86_64.exe || true
 
       - name: Build Full Game
         run: |
