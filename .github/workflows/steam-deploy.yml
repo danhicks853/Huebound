@@ -51,17 +51,16 @@ jobs:
       - name: Deploy Demo to Steam
         uses: game-ci/steam-deploy@v1
         with:
+          username: ${{ secrets.STEAM_USERNAME }}
+          password: ${{ secrets.STEAM_PASSWORD }}
+          totp: ${{ secrets.STEAM_TOTP_SECRET }}
           appId: 4555340
           buildDescription: "GitHub Actions Demo Build ${{ github.run_number }}"
           rootPath: export_demo
           depot1Path: .
           releaseBranch: default
-          localContentServer: false
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-          STEAM_TOTP_SECRET: ${{ secrets.STEAM_TOTP_SECRET }}
 
       # Deploy Main Game
       # - On master branch: to default branch
@@ -70,33 +69,31 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: game-ci/steam-deploy@v1
         with:
+          username: ${{ secrets.STEAM_USERNAME }}
+          password: ${{ secrets.STEAM_PASSWORD }}
+          totp: ${{ secrets.STEAM_TOTP_SECRET }}
           appId: 4459040
           buildDescription: "GitHub Actions Build ${{ github.run_number }}"
           rootPath: export
           depot1Path: .
           releaseBranch: default
-          localContentServer: false
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-          STEAM_TOTP_SECRET: ${{ secrets.STEAM_TOTP_SECRET }}
 
       - name: Deploy Main Game to Steam (Preview)
         if: github.ref == 'refs/heads/dev'
         uses: game-ci/steam-deploy@v1
         with:
+          username: ${{ secrets.STEAM_USERNAME }}
+          password: ${{ secrets.STEAM_PASSWORD }}
+          totp: ${{ secrets.STEAM_TOTP_SECRET }}
           appId: 4459040
           buildDescription: "GitHub Actions Preview Build ${{ github.run_number }}"
           rootPath: export
           depot1Path: .
           releaseBranch: default
-          localContentServer: false
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-          STEAM_TOTP_SECRET: ${{ secrets.STEAM_TOTP_SECRET }}
 
       # Promote main game to preview branch (only on dev)
       - name: Promote to Preview Branch
