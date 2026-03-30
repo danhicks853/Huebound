@@ -34,6 +34,13 @@ jobs:
           cp ~/godotsteam/libgodotsteam.windows.template_release.x86_64.dll ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/windows_release_x86_64.exe || true
           cp ~/godotsteam/libgodotsteam.windows.template_debug.x86_64.dll ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/windows_debug_x86_64.exe || true
 
+      - name: Clean export directories
+        run: |
+          # Remove Steam client junk committed to export directories
+          rm -rf export/appcache export/bin export/config export/logs export/package export/public export/siteserverui export/steamapps export/userdata export/steam_api64.dll export/libgodotsteam.windows.template_release.x86_64.dll
+          rm -rf export_demo/appcache export_demo/bin export_demo/config export_demo/logs export_demo/package export_demo/public export_demo/siteserverui export_demo/steamapps export_demo/userdata export_demo/steam_api64.dll export_demo/steamclient*.dll export_demo/crashhandler*.dll export_demo/steamconsole*.dll export_demo/tier0_s*.dll export_demo/vstdlib_s*.dll export_demo/steamcmd*.old export_demo/update_hosts_cached.vdf export_demo/steam.dll export_demo/libgodotsteam*.dll export_demo/huebound.zip
+          mkdir -p export export_demo
+
       - name: Build Full Game
         run: |
           sed -i 's/const IS_DEMO := true/const IS_DEMO := false/g' scripts/autoloads/demo_config.gd
@@ -62,39 +69,6 @@ jobs:
           appId: 4555340
           buildDescription: "GitHub Actions Demo Build ${{ github.run_number }}"
           rootPath: export_demo
-          depot1Path: .
-          releaseBranch: default
-        env:
-          STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-
-      # Deploy Main Game
-      # - On master branch: to default branch
-      # - On dev branch: to preview branch
-      - name: Deploy Main Game to Steam (Default)
-        if: github.ref == 'refs/heads/master'
-        uses: game-ci/steam-deploy@v3
-        with:
-          username: ${{ secrets.STEAM_USERNAME }}
-          password: ${{ secrets.STEAM_PASSWORD }}
-          totp: ${{ steps.steam-totp.outputs.code }}
-          appId: 4459040
-          buildDescription: "GitHub Actions Build ${{ github.run_number }}"
-          rootPath: export
-          depot1Path: .
-          releaseBranch: default
-        env:
-          STEAM_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
-
-      - name: Deploy Main Game to Steam (Preview)
-        if: github.ref == 'refs/heads/dev'
-        uses: game-ci/steam-deploy@v3
-        with:
-          username: ${{ secrets.STEAM_USERNAME }}
-          password: ${{ secrets.STEAM_PASSWORD }}
-          totp: ${{ steps.steam-totp.outputs.code }}
-          appId: 4459040
-          buildDescription: "GitHub Actions Preview Build ${{ github.run_number }}"
-          rootPath: export
           depot1Path: .
           releaseBranch: default
         env:
