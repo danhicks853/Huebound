@@ -27,8 +27,9 @@ jobs:
 
       - name: Install GodotSteam Templates
         run: |
-          wget -q https://github.com/GodotSteam/GodotSteam/releases/download/v4.6/godotsteam-g46-templates.zip
-          unzip -q godotsteam-g46-templates.zip -d ~/godotsteam
+          mkdir -p ~/godotsteam
+          wget -q https://codeberg.org/godotsteam/godotsteam/releases/download/v4.18/godotsteam-g461-s164-gs418-templates.tar.xz -O ~/godotsteam/templates.tar.xz
+          tar -xf ~/godotsteam/templates.tar.xz -C ~/godotsteam
           mkdir -p ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
           cp ~/godotsteam/windows_* ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/ || true
 
