@@ -76,6 +76,10 @@ func _ready() -> void:
 	# Check for endgame state (prestige 25 with rainbow)
 	if _is_endgame_state():
 		return
+	# Zen Mode: set up starting nodes and mark primaries discovered
+	if GameState.zen_mode:
+		_setup_zen_mode()
+		return
 	# Start tutorial if fresh game and tutorial not already completed/skipped
 	if NodeFactory.placed_nodes.is_empty() and not GameState.tutorial_completed:
 		call_deferred("_start_tutorial")
@@ -147,6 +151,15 @@ func _restore_saved_layout() -> void:
 	GameState.pending_nodes.clear()
 	GameState.pending_connections.clear()
 
+func _setup_zen_mode() -> void:
+	# Mark primaries as discovered
+	for i in range(_palette.palette.size()):
+		var entry = _palette.palette[i]
+		if entry.name in ["Blue", "Red", "Yellow"]:
+			if not _palette.discovered[i]:
+				_palette.discovered[i] = true
+				_palette.discovery_count += 1
+
 var info_update_timer: float = 0.0
 var _autosave_timer: float = 0.0
 
@@ -169,8 +182,8 @@ func _process(delta: float) -> void:
 		if _tutorial_active:
 			_check_tutorial_progress()
 	
-	# Update prestige button visibility and glow
-	if prestige_btn:
+	# Update prestige button visibility and glow (skip in zen mode)
+	if prestige_btn and not GameState.zen_mode:
 		var eligible = _can_prestige()
 		if eligible and not prestige_btn.visible:
 			prestige_btn.visible = true
@@ -183,8 +196,9 @@ func _process(delta: float) -> void:
 			var glow = 0.5 + 0.5 * sin(_prestige_glow_time)
 			prestige_btn.modulate = Color(1.0, 1.0, 1.0).lerp(Color(1.2, 1.0, 1.4), glow)
 	
-	# Flying color nodes: spawn when low on currency
-	_update_flying_nodes(delta)
+	# Flying color nodes: spawn when low on currency (disabled in zen mode)
+	if not GameState.zen_mode:
+		_update_flying_nodes(delta)
 	
 	# Discovery notification cards float up and fade
 	_update_discovery_cards(delta)
@@ -427,10 +441,11 @@ func _try_place_node(pos: Vector2) -> void:
 	var def = NodeFactory.get_node_def(placing_node_id)
 	if def.is_empty():
 		return
-	var cost = NodeFactory.get_node_cost(placing_node_id)
-	if not GameState.spend_currency(cost):
-		return
-	NodeFactory.record_purchase(placing_node_id)
+	if not GameState.zen_mode:
+		var cost = NodeFactory.get_node_cost(placing_node_id)
+		if not GameState.spend_currency(cost):
+			return
+		NodeFactory.record_purchase(placing_node_id)
 	
 	var node = FactoryNode.new()
 	node.setup(placing_node_id)
@@ -438,9 +453,6 @@ func _try_place_node(pos: Vector2) -> void:
 	nodes_layer.add_child(node)
 	NodeFactory.register_node(node)
 	SFX.play_place()
-	# Steam achievement for placing nodes
-	if NodeFactory.placed_nodes.size() >= 10:
-		SteamManager.unlock_achievement("ten_nodes")
 	
 	# Check if this is the Rainbow node — trigger endgame
 	if def.get("rainbow", false):
@@ -610,7 +622,7 @@ func start_placing(node_id: String) -> void:
 		return
 	if not NodeFactory.is_node_unlocked(node_id):
 		return
-	if not GameState.can_afford(def.cost):
+	if not GameState.zen_mode and not GameState.can_afford(def.cost):
 		return
 	
 	current_mode = Mode.PLACING
@@ -727,10 +739,10 @@ func _setup_hud() -> void:
 	
 	# Title
 	var title = Label.new()
-	title.text = "HUEBOUND"
+	title.text = "HUEBOUND" if not GameState.zen_mode else "ZEN MODE"
 	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	title.add_theme_font_size_override("font_size", 28)
-	title.add_theme_color_override("font_color", Color(0.7, 0.8, 1.0, 0.9))
+	title.add_theme_color_override("font_color", Color(0.7, 0.8, 1.0, 0.9) if not GameState.zen_mode else Color(0.5, 1.0, 0.7, 0.9))
 	top_bar.add_child(title)
 	
 	var spacer1 = Control.new()
@@ -738,77 +750,79 @@ func _setup_hud() -> void:
 	spacer1.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	top_bar.add_child(spacer1)
 	
-	# Currency + rate
-	var currency_vbox = VBoxContainer.new()
-	currency_vbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	top_bar.add_child(currency_vbox)
+	# Currency + rate (hidden in zen mode)
+	if not GameState.zen_mode:
+		var currency_vbox = VBoxContainer.new()
+		currency_vbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		top_bar.add_child(currency_vbox)
+		
+		currency_label = Label.new()
+		currency_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		currency_label.text = "$ %.1f" % GameState.currency
+		currency_label.add_theme_font_size_override("font_size", 22)
+		currency_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.3))
+		currency_vbox.add_child(currency_label)
+		GameState.currency_changed.connect(func(amt): currency_label.text = "$ %.1f" % amt)
+		
+		# Income / Upkeep / Net row
+		var rate_row = HBoxContainer.new()
+		rate_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		rate_row.add_theme_constant_override("separation", 8)
+		currency_vbox.add_child(rate_row)
+		
+		income_label = Label.new()
+		income_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		income_label.text = "+0.0"
+		income_label.add_theme_font_size_override("font_size", 11)
+		income_label.add_theme_color_override("font_color", Color(0.4, 0.9, 0.4, 0.8))
+		rate_row.add_child(income_label)
+		
+		upkeep_label = Label.new()
+		upkeep_label.mouse_filter = Control.MOUSE_FILTER_PASS
+		upkeep_label.text = "-0.0"
+		upkeep_label.add_theme_font_size_override("font_size", 11)
+		upkeep_label.add_theme_color_override("font_color", Color(0.9, 0.4, 0.4, 0.8))
+		upkeep_label.mouse_entered.connect(_show_upkeep_tooltip)
+		upkeep_label.mouse_exited.connect(_hide_upkeep_tooltip)
+		rate_row.add_child(upkeep_label)
+		
+		rate_label = Label.new()
+		rate_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		rate_label.text = "= 0.0/s"
+		rate_label.add_theme_font_size_override("font_size", 11)
+		rate_label.add_theme_color_override("font_color", Color(0.7, 0.65, 0.4, 0.8))
+		rate_row.add_child(rate_label)
+		
+		GameState.currency_rate_changed.connect(func(rate):
+			_update_rate_display(rate)
+			_update_palette_locks()
+		)
 	
-	currency_label = Label.new()
-	currency_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	currency_label.text = "$ %.1f" % GameState.currency
-	currency_label.add_theme_font_size_override("font_size", 22)
-	currency_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.3))
-	currency_vbox.add_child(currency_label)
-	GameState.currency_changed.connect(func(amt): currency_label.text = "$ %.1f" % amt)
-	
-	# Income / Upkeep / Net row
-	var rate_row = HBoxContainer.new()
-	rate_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	rate_row.add_theme_constant_override("separation", 8)
-	currency_vbox.add_child(rate_row)
-	
-	income_label = Label.new()
-	income_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	income_label.text = "+0.0"
-	income_label.add_theme_font_size_override("font_size", 11)
-	income_label.add_theme_color_override("font_color", Color(0.4, 0.9, 0.4, 0.8))
-	rate_row.add_child(income_label)
-	
-	upkeep_label = Label.new()
-	upkeep_label.mouse_filter = Control.MOUSE_FILTER_PASS
-	upkeep_label.text = "-0.0"
-	upkeep_label.add_theme_font_size_override("font_size", 11)
-	upkeep_label.add_theme_color_override("font_color", Color(0.9, 0.4, 0.4, 0.8))
-	upkeep_label.mouse_entered.connect(_show_upkeep_tooltip)
-	upkeep_label.mouse_exited.connect(_hide_upkeep_tooltip)
-	rate_row.add_child(upkeep_label)
-	
-	rate_label = Label.new()
-	rate_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	rate_label.text = "= 0.0/s"
-	rate_label.add_theme_font_size_override("font_size", 11)
-	rate_label.add_theme_color_override("font_color", Color(0.7, 0.65, 0.4, 0.8))
-	rate_row.add_child(rate_label)
-	
-	GameState.currency_rate_changed.connect(func(rate):
-		_update_rate_display(rate)
-		_update_palette_locks()
-	)
-	
-	# Prestige button (between currency and collection)
-	var spacer_prestige = Control.new()
-	spacer_prestige.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	spacer_prestige.custom_minimum_size = Vector2(10, 0)
-	top_bar.add_child(spacer_prestige)
-	
-	prestige_btn = Button.new()
-	prestige_btn.custom_minimum_size = Vector2(0, 36)
-	prestige_btn.add_theme_font_size_override("font_size", 12)
-	var prest_style = StyleBoxFlat.new()
-	prest_style.bg_color = Color(0.15, 0.1, 0.25, 0.9)
-	prest_style.border_color = Color(0.6, 0.4, 1.0, 0.7)
-	prest_style.set_border_width_all(2)
-	prest_style.set_corner_radius_all(4)
-	prest_style.set_content_margin_all(6)
-	prestige_btn.add_theme_stylebox_override("normal", prest_style)
-	var prest_hover = prest_style.duplicate()
-	prest_hover.bg_color = Color(0.2, 0.15, 0.35, 0.9)
-	prestige_btn.add_theme_stylebox_override("hover", prest_hover)
-	prestige_btn.add_theme_color_override("font_color", Color(0.8, 0.6, 1.0))
-	prestige_btn.add_theme_color_override("font_hover_color", Color(1.0, 0.85, 1.0))
-	prestige_btn.pressed.connect(_on_prestige_btn_pressed)
-	prestige_btn.visible = false
-	top_bar.add_child(prestige_btn)
+	# Prestige button (between currency and collection) — hidden in zen mode
+	if not GameState.zen_mode:
+		var spacer_prestige = Control.new()
+		spacer_prestige.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		spacer_prestige.custom_minimum_size = Vector2(10, 0)
+		top_bar.add_child(spacer_prestige)
+		
+		prestige_btn = Button.new()
+		prestige_btn.custom_minimum_size = Vector2(0, 36)
+		prestige_btn.add_theme_font_size_override("font_size", 12)
+		var prest_style = StyleBoxFlat.new()
+		prest_style.bg_color = Color(0.15, 0.1, 0.25, 0.9)
+		prest_style.border_color = Color(0.6, 0.4, 1.0, 0.7)
+		prest_style.set_border_width_all(2)
+		prest_style.set_corner_radius_all(4)
+		prest_style.set_content_margin_all(6)
+		prestige_btn.add_theme_stylebox_override("normal", prest_style)
+		var prest_hover = prest_style.duplicate()
+		prest_hover.bg_color = Color(0.2, 0.15, 0.35, 0.9)
+		prestige_btn.add_theme_stylebox_override("hover", prest_hover)
+		prestige_btn.add_theme_color_override("font_color", Color(0.8, 0.6, 1.0))
+		prestige_btn.add_theme_color_override("font_hover_color", Color(1.0, 0.85, 1.0))
+		prestige_btn.pressed.connect(_on_prestige_btn_pressed)
+		prestige_btn.visible = false
+		top_bar.add_child(prestige_btn)
 	
 	# Gallery button
 	var spacer_gallery = Control.new()
@@ -834,8 +848,8 @@ func _setup_hud() -> void:
 	gallery_btn.pressed.connect(_toggle_gallery)
 	top_bar.add_child(gallery_btn)
 	
-	# Shop button (hidden in endgame)
-	if not _is_endgame_state():
+	# Shop button (hidden in endgame and zen mode)
+	if not _is_endgame_state() and not GameState.zen_mode:
 		var spacer_shop = Control.new()
 		spacer_shop.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		spacer_shop.custom_minimum_size = Vector2(10, 0)
@@ -883,8 +897,8 @@ func _setup_hud() -> void:
 	menu_btn.pressed.connect(_show_game_menu)
 	top_bar.add_child(menu_btn)
 	
-	# Prestige indicator
-	if GameState.prestige_count > 0:
+	# Prestige indicator (hidden in zen mode)
+	if GameState.prestige_count > 0 and not GameState.zen_mode:
 		var prestige_lbl = Label.new()
 		prestige_lbl.text = "P%d" % GameState.prestige_count
 		prestige_lbl.add_theme_font_size_override("font_size", 11)
@@ -1227,10 +1241,10 @@ func _on_delete_pressed() -> void:
 	var nid = node.node_id
 	_deselect()
 	NodeFactory.unregister_node(node)
-	# Refund 50% of what this node cost at its purchase level
-	var refund = NodeFactory.get_node_sell_value(nid)
-	NodeFactory.record_sell(nid)
-	GameState.add_currency(refund)
+	if not GameState.zen_mode:
+		var refund = NodeFactory.get_node_sell_value(nid)
+		NodeFactory.record_sell(nid)
+		GameState.add_currency(refund)
 	node.queue_free()
 	SFX.play_delete()
 
@@ -1244,13 +1258,15 @@ func _update_info_panel() -> void:
 	
 	delete_btn.visible = true
 	save_template_btn.visible = false
-	if not _delete_confirm:
+	if not GameState.zen_mode and not _delete_confirm:
 		var refund = NodeFactory.get_node_sell_value(selected_node.node_id)
 		delete_btn.text = "Sell $%.0f" % refund
+	elif GameState.zen_mode and not _delete_confirm:
+		delete_btn.text = "Remove"
 	
 	var def = selected_node.node_def
 	var color_hex = selected_node.base_color.to_html(false)
-	var can_upgrade = def.get("max_level", 1) > 1
+	var can_upgrade = def.get("max_level", 1) > 1 and not GameState.zen_mode
 	upgrade_btn.visible = can_upgrade
 	var text = ""
 	if can_upgrade:
@@ -1532,18 +1548,23 @@ func _toggle_palette_collapse() -> void:
 func _update_palette_locks() -> void:
 	for id in node_buttons:
 		var btn: Button = node_buttons[id]
-		var unlocked = NodeFactory.is_node_unlocked(id)
 		var def = NodeFactory.get_node_def(id)
-		if unlocked:
-			var cost = NodeFactory.get_node_cost(id)
-			var can_afford = GameState.can_afford(cost)
-			btn.disabled = not can_afford
-			btn.text = "%s\n$%.0f" % [def.name, cost]
-			btn.modulate.a = 1.0 if can_afford else 0.6
+		if GameState.zen_mode:
+			btn.disabled = false
+			btn.text = def.name
+			btn.modulate.a = 1.0
 		else:
-			btn.disabled = true
-			btn.text = "%s\n[LOCKED] $%.0f" % [def.name, def.get("unlock_cost", 0.0)]
-			btn.modulate.a = 0.4
+			var unlocked = NodeFactory.is_node_unlocked(id)
+			if unlocked:
+				var cost = NodeFactory.get_node_cost(id)
+				var can_afford = GameState.can_afford(cost)
+				btn.disabled = not can_afford
+				btn.text = "%s\n$%.0f" % [def.name, cost]
+				btn.modulate.a = 1.0 if can_afford else 0.6
+			else:
+				btn.disabled = true
+				btn.text = "%s\n[LOCKED] $%.0f" % [def.name, def.get("unlock_cost", 0.0)]
+				btn.modulate.a = 0.4
 	gallery_btn.text = "Collection %d/%d" % [_palette.discovery_count, _get_collection_total()]
 
 func _toggle_gallery() -> void:
@@ -2281,16 +2302,17 @@ func _on_color_discovered(palette_index: int, color_name: String, color: Color, 
 	_refresh_gallery()
 	SFX.play_discovery()
 	_spawn_discovery_card(color_name, color, bonus_value)
-	# Track prestige progress
-	GameState.discoveries_since_prestige += 1
-	# Steam achievements
+	if not GameState.zen_mode:
+		GameState.discoveries_since_prestige += 1
+	if GameState.zen_mode:
+		_register_zen_color_node(color_name, color)
+		_add_color_node_to_palette(color_name, color)
+		return
 	var achievement_id = "color_" + color_name.to_lower().replace(" ", "_")
 	SteamManager.unlock_achievement(achievement_id)
-	# Check tier — tier 5 is rare
 	var entry = _palette.palette[palette_index]
 	if entry.get("tier", 0) >= 5:
 		SteamManager.unlock_achievement("tier_5")
-	# Milestone achievements
 	if _palette.discovery_count >= 1:
 		SteamManager.unlock_achievement("first_color")
 	if _palette.discovery_count >= 10:
@@ -2302,9 +2324,32 @@ func _on_color_discovered(palette_index: int, color_name: String, color: Color, 
 	if _palette.discovery_count >= _palette.get_palette_size():
 		SteamManager.unlock_achievement("all_colors")
 	SteamManager.set_status("Discovering colors (%d/256)" % _palette.discovery_count)
-	# Demo completion check
 	if DemoConfig.is_demo() and _palette.discovery_count >= DemoConfig.get_demo_color_count():
 		call_deferred("_show_demo_complete_banner")
+
+func _register_zen_color_node(color_name: String, color: Color) -> void:
+	var node_id = "zen_" + color_name.to_lower().replace(" ", "_")
+	if not NodeFactory._dynamic_defs.has(node_id):
+		NodeFactory._dynamic_defs[node_id] = {
+			"type": NodeFactory.NodeType.PRODUCER,
+			"name": color_name + " Source",
+			"description": "Generates " + color_name + " orbs",
+			"cost": 0.0,
+			"shape": NodeFactory.Shape.CIRCLE,
+			"color": color,
+			"rate": 1.0,
+			"max_level": 1,
+			"unlock_cost": 0.0,
+		}
+
+func _add_color_node_to_palette(color_name: String, color: Color) -> void:
+	var node_id = "zen_" + color_name.to_lower().replace(" ", "_")
+	var def = NodeFactory.get_node_def(node_id)
+	if def.is_empty() or node_buttons.has(node_id):
+		return
+	var btn = _create_node_button(node_id, def)
+	_palette_grid.add_child(btn)
+	node_buttons[node_id] = btn
 
 func _spawn_discovery_card(color_name: String, color: Color, bonus_value: float) -> void:
 	var card = PanelContainer.new()
@@ -2338,7 +2383,7 @@ func _spawn_discovery_card(color_name: String, color: Color, bonus_value: float)
 	name_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	vbox.add_child(name_lbl)
 	
-	if bonus_value > 0.0:
+	if bonus_value > 0.0 and not GameState.zen_mode:
 		var bonus_lbl = Label.new()
 		bonus_lbl.text = "+$%.0f" % bonus_value
 		bonus_lbl.add_theme_font_size_override("font_size", 11)
@@ -2346,6 +2391,15 @@ func _spawn_discovery_card(color_name: String, color: Color, bonus_value: float)
 		bonus_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		bonus_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		vbox.add_child(bonus_lbl)
+	
+	if GameState.zen_mode:
+		var hint_lbl = Label.new()
+		hint_lbl.text = "Added to your palette!"
+		hint_lbl.add_theme_font_size_override("font_size", 10)
+		hint_lbl.add_theme_color_override("font_color", Color(0.6, 0.7, 0.9))
+		hint_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		hint_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		vbox.add_child(hint_lbl)
 	
 	# Click to dismiss
 	card.gui_input.connect(func(event):
@@ -2991,14 +3045,17 @@ func _finish_box_select() -> void:
 
 func _show_box_selection_info() -> void:
 	var count = _box_selected_nodes.size()
-	var total_refund := 0.0
-	for node in _box_selected_nodes:
-		total_refund += NodeFactory.get_node_sell_value(node.node_id)
-	info_label.text = "[color=#6af][b]%d nodes selected[/b][/color]\n\nSell all for [color=#fc3]$%.0f[/color]" % [count, total_refund]
+	if GameState.zen_mode:
+		info_label.text = "[color=#6af][b]%d nodes selected[/b][/color]\n\nRemove all selected nodes?" % count
+	else:
+		var total_refund := 0.0
+		for node in _box_selected_nodes:
+			total_refund += NodeFactory.get_node_sell_value(node.node_id)
+		info_label.text = "[color=#6af][b]%d nodes selected[/b][/color]\n\nSell all for [color=#fc3]$%.0f[/color]" % [count, total_refund]
 	upgrade_btn.visible = false
 	delete_btn.visible = true
 	_delete_confirm = false
-	delete_btn.text = "Sell %d Nodes" % count
+	delete_btn.text = "Remove %d Nodes" % count if GameState.zen_mode else "Sell %d Nodes" % count
 	save_template_btn.visible = _get_max_template_slots() > 0 and count >= 2
 
 func _clear_box_selection() -> void:
@@ -3015,9 +3072,10 @@ func _delete_box_selected() -> void:
 		if is_instance_valid(node):
 			var nid = node.node_id
 			NodeFactory.unregister_node(node)
-			var refund = NodeFactory.get_node_sell_value(nid)
-			NodeFactory.record_sell(nid)
-			GameState.add_currency(refund)
+			if not GameState.zen_mode:
+				var refund = NodeFactory.get_node_sell_value(nid)
+				NodeFactory.record_sell(nid)
+				GameState.add_currency(refund)
 			node.queue_free()
 	_box_selected_nodes.clear()
 	SFX.play_delete()
@@ -3307,8 +3365,9 @@ func _add_template_card(parent: VBoxContainer, tpl: Dictionary, idx: int) -> voi
 	var node_count = tpl.get("nodes", []).size()
 	var conn_count = tpl.get("connections", []).size()
 	var total_cost = _get_template_cost(tpl)
+	var cost_text = "Free" if GameState.zen_mode else "$%.0f" % total_cost
 	var detail_lbl = Label.new()
-	detail_lbl.text = "%d nodes, %d links — $%.0f" % [node_count, conn_count, total_cost]
+	detail_lbl.text = "%d nodes, %d links — %s" % [node_count, conn_count, cost_text]
 	detail_lbl.add_theme_font_size_override("font_size", 9)
 	detail_lbl.add_theme_color_override("font_color", Color(0.5, 0.5, 0.6))
 	detail_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -3439,7 +3498,7 @@ func _start_placing_template(idx: int) -> void:
 	_cancel_action()
 	_placing_template = GameState.templates[idx]
 	var total_cost = _get_template_cost(_placing_template)
-	if not GameState.can_afford(total_cost):
+	if not GameState.zen_mode and not GameState.can_afford(total_cost):
 		info_label.text = "[color=#f66]Not enough Light![/color]\nNeed [color=#fc3]$%.0f[/color]" % total_cost
 		_placing_template = {}
 		return
@@ -3465,16 +3524,18 @@ func _try_place_template(pos: Vector2) -> void:
 		target_pos = NodeFactory.snap_to_grid(target_pos)
 		if not NodeFactory.is_position_free(target_pos):
 			return
-	# Check total cost
-	var total_cost = _get_template_cost(_placing_template)
-	if not GameState.spend_currency(total_cost):
-		return
+	# Check total cost (skip in zen mode)
+	if not GameState.zen_mode:
+		var total_cost = _get_template_cost(_placing_template)
+		if not GameState.spend_currency(total_cost):
+			return
 	# Place all nodes
 	var placed: Array[FactoryNode] = []
 	for tpl_node in _placing_template.nodes:
 		var target_pos = center + Vector2(float(tpl_node.ox), float(tpl_node.oy))
 		target_pos = NodeFactory.snap_to_grid(target_pos)
-		NodeFactory.record_purchase(tpl_node.node_id)
+		if not GameState.zen_mode:
+			NodeFactory.record_purchase(tpl_node.node_id)
 		var node = FactoryNode.new()
 		node.setup(tpl_node.node_id)
 		node.global_position = target_pos
@@ -3521,6 +3582,8 @@ func _on_prestige_btn_pressed() -> void:
 		_show_prestige_selection()
 
 func _can_prestige() -> bool:
+	if GameState.zen_mode:
+		return false
 	if DemoConfig.is_demo() and GameState.prestige_count >= 1:
 		return false
 	if GameState.endgame_seen:

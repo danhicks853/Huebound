@@ -189,7 +189,9 @@ func _build_ui() -> void:
 	
 	# Buttons
 	_add_menu_button(center, "new_game", "New Game", true)
+	_add_menu_button(center, "zen_mode", "Zen Mode", true)
 	_add_menu_button(center, "continue", "Continue", GameState.has_save())
+	_add_menu_button(center, "continue_zen", "Continue (Zen)", GameState._has_zen_save())
 	_add_menu_button(center, "settings", "Settings", true)
 	_add_menu_button(center, "credits", "Credits", true)
 	
@@ -243,7 +245,15 @@ func _on_button_pressed(id: String) -> void:
 				return
 			GameState.reset_state()
 			get_tree().change_scene_to_file("res://scenes/main_game.tscn")
+		"zen_mode":
+			GameState.reset_state()
+			GameState.zen_mode = true
+			get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 		"continue":
+			GameState.load_game()
+			get_tree().change_scene_to_file("res://scenes/main_game.tscn")
+		"continue_zen":
+			GameState.zen_mode = true
 			GameState.load_game()
 			get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 		"settings":
