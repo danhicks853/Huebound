@@ -136,6 +136,9 @@ func rebuild_dynamic_defs() -> void:
 			}
 
 func is_node_unlocked(node_id: String) -> bool:
+	var gs = get_node_or_null("/root/GameState")
+	if gs and gs.zen_mode:
+		return true
 	var def = get_node_def(node_id)
 	if def.is_empty():
 		return false
